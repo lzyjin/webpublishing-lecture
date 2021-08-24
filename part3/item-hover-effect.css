@@ -1,0 +1,183 @@
+/* FontAwesome CDN 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Google Web Font : Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500&display=swap');
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal; /* h태그는 기본이 bold인데 이걸 빼려고 */
+}
+
+/* --------------------------------- */
+
+.item {
+	border-radius: 15px;
+	overflow: hidden;
+	position: relative;
+  box-shadow: 0 0 10px #bbb;
+}
+.item:hover img {
+  filter: blur(2px);
+}
+.item img {
+	width: 230px;
+	height: 330px;
+  transition: 0.5s;
+}
+
+
+.detail {
+	background-color: #fff;
+	position: absolute;
+	 /* HTML의 모든 요소는 position:absolute로 주면 display속성이 inline-block으로 바뀐다 */
+	width: 100%;
+	bottom : -117px;
+	/* bottom: 0; 다 작업하고 주석하기 */
+	left : 0;
+	height: 50%;
+	transition: 0.5s; /* 하얀색 detail 영역이 부드럽게 움직이도록  */
+	/* 상하 좌우 */
+	padding: 5px 20px; /* 이거 때문에 box-size : borderbox */
+	
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.item:hover .detail {
+	bottom : 0;
+}
+
+/* title */
+.title {
+	position: relative;
+	border-bottom: 1px solid #ddd;
+}
+.title h2 {
+	font-size: 10px;
+	color: #888;
+	line-height: 1.2em;
+}
+.title h2 em {
+	display: block;
+	font-style: normal;
+	margin-bottom: 5px;
+	color: #000;
+	font-weight: 500;
+}
+.title span {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: crimson;
+  font-size: 12px;
+}
+
+.info {
+	position: relative;
+}
+.size {
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.size label, .color label {
+	font-weight: 500;
+	display: block;
+	font-size: 10px;
+}
+.size span, .color span {
+  transition: 0.3s;
+}
+
+.size span {
+	font-size: 3px !important;
+	background-color: #fff;
+	color: #000;
+	padding: 2px;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.size span.active, .size span:hover {
+	background-color: #000;
+	color: #fff;
+}
+.color {
+	margin-bottom: 5px;
+}
+
+.color span {
+	width: 10px;
+	height: 10px;
+  margin-right: 5px;
+	display: inline-block;
+  cursor: pointer;
+}
+.color span:nth-of-type(1){
+  background-color: #808000;
+}
+.color span:nth-of-type(2){
+  background-color: #ff0000;
+}
+.color span:nth-of-type(3){
+  background-color: #ffc0cb;
+}
+.color span:nth-of-type(4){
+  background-color: #00ffff;
+}
+.color span:nth-of-type(5){
+  background-color: #0000ff;
+}
+
+.color span.active, .color span:hover {
+  border-radius: 50%;
+}
+
+
+.add-cart {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px;
+  font-size: 10px;
+}
+.add-cart:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.like:before {
+  font-size: 12px;
+  content: '\f08a';
+  font-family: fontawesome;
+  color: #bbb;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.like.active:before {
+  content: '\f004';
+  color: crimson;
+}

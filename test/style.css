@@ -1,0 +1,99 @@
+/* FontAwesome CDN 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Google Web Font : Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500&display=swap');
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal; /* h태그는 기본이 bold인데 이걸 빼려고 */
+}
+
+/* --------------------------------- */
+
+.item {
+	border-radius: 15px;
+	overflow: hidden;
+	position: relative;
+  box-shadow: 0 0 10px #bbb;
+}
+.item:hover img {
+  filter: blur(2px);
+}
+.item img {
+	width: 230px;
+	height: 330px;
+  transition: 0.5s;
+}
+
+
+.detail {
+	background-color: #fff;
+	position: absolute;
+	 /* HTML의 모든 요소는 position:absolute로 주면 display속성이 inline-block으로 바뀐다 */
+	width: 100%;
+	bottom : -50px;
+	/* bottom: 0; 다 작업하고 주석하기 */
+	left : 0;
+	height: 30%;
+	transition: 0.5s; /* 하얀색 detail 영역이 부드럽게 움직이도록  */
+	/* 상하 좌우 */
+	padding: 5px 20px; /* 이거 때문에 box-size : borderbox */
+	
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.item:hover .detail {
+	bottom : 0;
+}
+
+/* title */
+.title {
+	position: relative;
+}
+.title h2 {
+	font-size: 10px;
+	color: #888;
+	line-height: 1.2em;
+}
+.title h2 em {
+	display: block;
+	font-style: normal;
+	margin-bottom: 5px;
+	color: #000;
+	font-weight: 500;
+}
+
+
+.info {
+	position: relative;
+}
+
+.add-cart {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px;
+  font-size: 10px;
+}
+.add-cart:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}

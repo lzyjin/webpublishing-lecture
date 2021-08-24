@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>선택자, 선택자 적용 우선순위</title>
+  <link rel="stylesheet" href="./selector.css">
+</head>
+<body>
+  <p>
+    css 적용 우선순위
+    (동일한 css속성이 중복 사용되늑여우 스타일은 우선순위에 따라 적용된다)
+    1. !important Style
+    2. inline Style
+    3. id selector Style
+    4. class selector Style
+    5. tag selector Style
+
+    내부 파일 스타일과 외부 파일 스타일에서는 
+    내부 파일 스타일이 우선순위가 더 높다 
+  </p>
+  <h1>css 적용우선순위 - 태그</h1>
+  <h1 class="text">css 적용우선순위 - 클래스</h1>
+  <h1 id="text" class="text" style="color: gold;">css 적용우선순위 - 아이디</h1>
+  <h1>css 적용우선순위 - 인라인</h1>
+  <h1>css 적용우선순위 - !important</h1>
+</body>
+</html>
