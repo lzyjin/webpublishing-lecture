@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  height: 100vh;
+}
+
+.tab-inner {}
+
+input[name=tabmenu] {
+  display: none;
+}
+.tabs {
+  overflow: hidden;
+
+  position: relative;
+  /* items가 position: absolute; 라서 이 div가 높이값을 잃어버림 */
+  /* 따로 명시해야함 */
+  height: 100vh;
+}
+.items {
+  /* border: 1px solid red; */
+  position: absolute;
+
+  width: 300%;
+  height: 100vh;
+
+  transition: 0.5s;
+
+  top: 0;
+  left: 0;
+}
+
+.items div {
+  /* border: 1px solid blue; */
+
+  /* width: 100%; 가 아님 */
+  width: 33.333333%;
+  height: 100vh;
+  
+  float: left;
+  box-sizing: border-box;
+
+  /* div 안에 있는 h1을 중앙정렬 하기 위해 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.items div:nth-child(1) {
+  background-color: pink;
+}
+.items div:nth-child(2) {
+  background-color: yellowgreen;
+}
+.items div:nth-child(3) {
+  background-color: dodgerblue;
+}
+.items div h1 {
+  font-size: 80px;
+  color: #fff;
+  font-weight: normal;
+}
+
+.btn {
+  position: absolute;
+  bottom: 20px;
+
+  /* border: 1px solid black; */
+
+  width: 100%;
+  text-align: center;
+}
+.btn label {
+  display: inline-block;
+  width: 50px;
+  height: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+input[id=tab1]:checked~.tabs .items {
+  left: 0;
+}
+input[id=tab2]:checked~.tabs .items {
+  left: -100%;
+}
+input[id=tab3]:checked~.tabs .items {
+  left: -200%;
+}
+
+input[id=tab1]:checked~.btn label[for=tab1],
+input[id=tab2]:checked~.btn label[for=tab2],
+input[id=tab3]:checked~.btn label[for=tab3] {
+  background-color: #000;
+}
+
+/* input[id=tab1]:checked~.btn label[for=tab1] {
+  background-color: #000;
+} */
+
+
