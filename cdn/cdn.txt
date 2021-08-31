@@ -1,0 +1,14 @@
+/* 폰트어썸 cdn  */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* 제이쿼리 cdn  */
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+/* 구글폰트 - Raleway  */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/* 구글폰트 - Noto Sans KR  */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500&display=swap');
+
+/* 구글 폰트 - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
