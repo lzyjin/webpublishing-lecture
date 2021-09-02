@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>슬라이드쇼에 이전 다음 버튼 연결</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="./slideTest.css">
+</head>
+
+<body>
+
+  <!-- 튀어나오는애 자르는 부모 -->
+  <div class="tab-inner">
+
+    <input type="radio" name="tabmenu" id="tab1" checked>
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+
+    <div class="slide">
+      <!-- slide-inner가 긴애 -->
+      <div class="slide-inner">
+        <a href="#none1"><img src="/part1/images/imac_colors.jpeg" alt=""></a>
+        <a href="#none2"><img src="/part1/images/imac_price.jpeg" alt=""></a>
+        <a href="#none3"><img src="/part1/images/imac_yellow.jpeg" alt=""></a>
+      </div>
+    </div>
+
+    <div class="btn">
+      <label for="tab1" id="l1"></label>
+      <label for="tab2" id="l2"></label>
+      <label for="tab3" id="l3"></label>
+    </div>
+
+    <div class="btns" id="previous">
+      <i class="fa fa-arrow-left"></i>
+    </div>
+    <div class="btns" id="next">
+      <i class="fa fa-arrow-right"></i>
+    </div>
+
+  </div>
+
+  <script>
+	  $(function(){
+		$("#previous").on("click",()=>{
+			slideLeft();
+			// setTimeout(()=>{
+			// 	pageNation()
+			// },501)
+		})
+		$("#next").on("click",()=>{
+			slideRight();
+			// setTimeout(()=>{
+			// 	pageNation()
+			// },501)
+		})
+
+		
+	  })
+	  	$("#l1").on("click",()=>{
+			//   alert($("#tab1").prop("checked"))
+			setTimeout(()=>{
+				count =0;
+				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+			},501)
+			// $('#ckBox').is(':checked');
+		})
+		$("#l2").on("click",()=>{
+			//   alert($("#tab1").prop("checked"))
+			setTimeout(()=>{
+				count =1;
+				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+			},501)
+			// $('#ckBox').is(':checked');
+		})
+		$("#l3").on("click",()=>{
+			//   alert($("#tab1").prop("checked"))
+			setTimeout(()=>{
+				count =2;
+				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+			},501)
+			// $('#ckBox').is(':checked');
+		})
+	  
+		  let count = 0;
+		  let status = $('.slide-inner').css('left').substr(0, $('.slide-inner').css('left').indexOf("px"));
+		  let sliderWidth = $('.slide-inner a').width()
+		  let totalSlides = $('.slide-inner a').length-1
+
+		  let slideLeft = ()=>{
+				  if(count == 0){
+				  $('.slide-inner').css('left', `${-(sliderWidth * totalSlides)}px`);
+				  count = 2;
+				} else if(count != 0) {
+					$('.slide-inner').css('left', `${-(sliderWidth * --count)}px`);
+				}
+				
+				setTimeout(()=>{
+				pageNation(count)
+				},501)
+		  }
+		  let slideRight = ()=>{
+			if(count !=totalSlides){
+				$('.slide-inner').css('left', `${-(sliderWidth * ++count)}px`);
+			}  else if( count == totalSlides){
+				count = 0;
+				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+			}
+			setTimeout(()=>{
+				pageNation(count)
+			},501)
+		  }
+		
+		  function pageNation (counts){
+
+			console.log(typeof counts)
+			// $('#tab1').prop("checked", false);
+			// $('#tab2').prop("checked", false);
+			// $('#tab3').prop("checked", false);
+			document.getElementById("tab2").checked = false;
+			document.getElementById("tab1").checked = false;
+			document.getElementById("tab3").checked = false;
+
+			
+			if(counts == 0 ){
+				// $('#tab1').prop("checked", true);
+				document.getElementById("tab1").checked = true;
+			} else if( counts == 1){
+				// $('#tab2').prop("checked", true);
+				document.getElementById("tab2").checked = true;
+			} else if( counts == 2){
+				// $('#tab3').prop("checked", true);
+				document.getElementById("tab3").checked = true;
+			}
+			console.log($('#tab1').prop("checked"))
+			console.log($('#tab2').prop("checked"))
+			console.log($('#tab3').prop("checked"))
+
+			// console.log($("#tab1"))
+
+
+			// $('#tab1').attr("checked", false);
+			// $('#tab2').attr("checked", false);
+			// $('#tab3').attr("checked", false);
+		  }
+	  
+
+
+  </script>
+
+</body>
+
+</html>

@@ -7,11 +7,13 @@ a {
 text-decoration: none;
 }
 .tab-inner {
-/*   border: 1px solid red; */
+  border: 1px solid red;
   width: 500px;
   height: 330px;
 
-  overflow: hidden;
+  /* overflow: hidden; */
+
+  position: relative;
 }
 input[name=tabmenu] {
   display: none;
@@ -44,6 +46,7 @@ input[name=tabmenu] {
   text-align: center;
   margin-top: 10px;
 }
+
 .btn label {
   display: inline-block;
   width: 15px;
@@ -52,12 +55,18 @@ input[name=tabmenu] {
   border-radius: 50%;
   cursor: pointer;
 }
+
 input[id=tab1]:checked~.btn label[for=tab1],
 input[id=tab2]:checked~.btn label[for=tab2],
 input[id=tab3]:checked~.btn label[for=tab3] {
   background-color: crimson;
 }
 
+/* label[for=tab1].active,
+label[for=tab2].active,
+label[for=tab3].active {
+  background-color: crimson;
+} */
 
 input[id=tab1]:checked~.slide .slide-inner {
   left: 0;
@@ -67,4 +76,33 @@ input[id=tab2]:checked~.slide .slide-inner {
 }
 input[id=tab3]:checked~.slide .slide-inner {
   left: -1000px;
+}
+
+#previous, 
+#next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid red; */
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+#previous:hover i, 
+#next:hover i {
+  color: orange;
+}
+
+#previous i, #next i {
+  /* border: 1px solid blue; */
+  display: inline-block;
+}
+#previous {
+  left: 0;
+}
+#next {
+  right: 0;
 }
