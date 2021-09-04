@@ -43,111 +43,112 @@
   </div>
 
   <script>
-	  $(function(){
-		$("#previous").on("click",()=>{
-			slideLeft();
-			// setTimeout(()=>{
-			// 	pageNation()
-			// },501)
-		})
-		$("#next").on("click",()=>{
-			slideRight();
-			// setTimeout(()=>{
-			// 	pageNation()
-			// },501)
-		})
+    $(function () {
 
-		
-	  })
-	  	$("#l1").on("click",()=>{
-			//   alert($("#tab1").prop("checked"))
-			setTimeout(()=>{
-				count =0;
-				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
-			},501)
-			// $('#ckBox').is(':checked');
-		})
-		$("#l2").on("click",()=>{
-			//   alert($("#tab1").prop("checked"))
-			setTimeout(()=>{
-				count =1;
-				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
-			},501)
-			// $('#ckBox').is(':checked');
-		})
-		$("#l3").on("click",()=>{
-			//   alert($("#tab1").prop("checked"))
-			setTimeout(()=>{
-				count =2;
-				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
-			},501)
-			// $('#ckBox').is(':checked');
-		})
-	  
-		  let count = 0;
-		  let status = $('.slide-inner').css('left').substr(0, $('.slide-inner').css('left').indexOf("px"));
-		  let sliderWidth = $('.slide-inner a').width()
-		  let totalSlides = $('.slide-inner a').length-1
-
-		  let slideLeft = ()=>{
-				  if(count == 0){
-				  $('.slide-inner').css('left', `${-(sliderWidth * totalSlides)}px`);
-				  count = 2;
-				} else if(count != 0) {
-					$('.slide-inner').css('left', `${-(sliderWidth * --count)}px`);
-				}
-				
-				setTimeout(()=>{
-				pageNation(count)
-				},501)
-		  }
-		  let slideRight = ()=>{
-			if(count !=totalSlides){
-				$('.slide-inner').css('left', `${-(sliderWidth * ++count)}px`);
-			}  else if( count == totalSlides){
-				count = 0;
-				$('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
-			}
-			setTimeout(()=>{
-				pageNation(count)
-			},501)
-		  }
-		
-		  function pageNation (counts){
-
-			console.log(typeof counts)
-			// $('#tab1').prop("checked", false);
-			// $('#tab2').prop("checked", false);
-			// $('#tab3').prop("checked", false);
-			document.getElementById("tab2").checked = false;
-			document.getElementById("tab1").checked = false;
-			document.getElementById("tab3").checked = false;
-
-			
-			if(counts == 0 ){
-				// $('#tab1').prop("checked", true);
-				document.getElementById("tab1").checked = true;
-			} else if( counts == 1){
-				// $('#tab2').prop("checked", true);
-				document.getElementById("tab2").checked = true;
-			} else if( counts == 2){
-				// $('#tab3').prop("checked", true);
-				document.getElementById("tab3").checked = true;
-			}
-			console.log($('#tab1').prop("checked"))
-			console.log($('#tab2').prop("checked"))
-			console.log($('#tab3').prop("checked"))
-
-			// console.log($("#tab1"))
+      $("#previous").on("click", () => {
+        slideLeft();
+        // setTimeout(()=>{
+        // 	pageNation()
+        // },501)
+      })
+      $("#next").on("click", () => {
+        slideRight();
+        // setTimeout(()=>{
+        // 	pageNation()
+        // },501)
+      })
 
 
-			// $('#tab1').attr("checked", false);
-			// $('#tab2').attr("checked", false);
-			// $('#tab3').attr("checked", false);
-		  }
-	  
+    })
+
+    
+    $("#l1").on("click", () => {
+      //   alert($("#tab1").prop("checked"))
+      setTimeout(() => {
+        count = 0;
+        $('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+      }, 501)
+      // $('#ckBox').is(':checked');
+    })
+    $("#l2").on("click", () => {
+      //   alert($("#tab1").prop("checked"))
+      setTimeout(() => {
+        count = 1;
+        $('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+      }, 501)
+      // $('#ckBox').is(':checked');
+    })
+    $("#l3").on("click", () => {
+      //   alert($("#tab1").prop("checked"))
+      setTimeout(() => {
+        count = 2;
+        $('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+      }, 501)
+      // $('#ckBox').is(':checked');
+    })
+
+    let count = 0;
+    let status = $('.slide-inner').css('left').substr(0, $('.slide-inner').css('left').indexOf("px"));
+    let sliderWidth = $('.slide-inner a').width()
+    let totalSlides = $('.slide-inner a').length - 1
+
+    let slideLeft = () => {
+      if (count == 0) {
+        $('.slide-inner').css('left', `${-(sliderWidth * totalSlides)}px`);
+        count = 2;
+      } else if (count != 0) {
+        $('.slide-inner').css('left', `${-(sliderWidth * --count)}px`);
+      }
+
+      setTimeout(() => {
+        pageNation(count)
+      }, 501)
+    }
+
+    let slideRight = () => {
+      if (count != totalSlides) {
+        $('.slide-inner').css('left', `${-(sliderWidth * ++count)}px`);
+      } else if (count == totalSlides) {
+        count = 0;
+        $('.slide-inner').css('left', `${-(sliderWidth * count)}px`);
+      }
+      setTimeout(() => {
+        pageNation(count)
+      }, 501)
+    }
+
+    function pageNation(counts) {
+
+      console.log(typeof counts)
+      // $('#tab1').prop("checked", false);
+      // $('#tab2').prop("checked", false);
+      // $('#tab3').prop("checked", false);
+      document.getElementById("tab2").checked = false;
+      document.getElementById("tab1").checked = false;
+      document.getElementById("tab3").checked = false;
 
 
+      if (counts == 0) {
+        // $('#tab1').prop("checked", true);
+        document.getElementById("tab1").checked = true;
+      } else if (counts == 1) {
+        // $('#tab2').prop("checked", true);
+        document.getElementById("tab2").checked = true;
+      } else if (counts == 2) {
+        // $('#tab3').prop("checked", true);
+        document.getElementById("tab3").checked = true;
+      }
+      console.log($('#tab1').prop("checked"))
+      console.log($('#tab2').prop("checked"))
+      console.log($('#tab3').prop("checked"))
+
+      // console.log($("#tab1"))
+
+
+      // $('#tab1').attr("checked", false);
+      // $('#tab2').attr("checked", false);
+      // $('#tab3').attr("checked", false);
+    }
   </script>
 
 </body>

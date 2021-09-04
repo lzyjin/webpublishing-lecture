@@ -12,3 +12,16 @@
 
 /* 구글 폰트 - Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* 제이쿼리 스무스 스크롤 플러그인*/
+<script src="SOME_URL_FOR_JQUERY"></script>
+<script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
+
+
+// Smooth Scroll
+<script>
+    $('선택자').click( function() {
+      $.scrollTo(this.hash || 0, 900);
+      e.preventDefault();
+    } );
+</script>
