@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>input 태그의 :checked와 확장선택자 - 이론예제</title>
+  <style>
+    /* 인접선택자 */
+    ul+p {
+      /* color: red; */
+    }
+
+    /* 형제선택자 */
+    ul~p {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>ul+p { color: red; } +는 인접선택자(ul과 인접해있는 p태그 하나만 선택)</h1>
+  <h1>ul~p { color: blue; } ~는 형제선택자(ul과 같은 레벨에 있는 p태그를 모두 선택)</h1>
+  <p>
+    두 선택자 모두 기준태그 아래에서부터 탐색 시작 
+  </p>
+
+  <p>문단입니다</p>
+  <ul>
+    <li>목록1</li>
+    <li>목록2</li>
+    <li>목록3</li>
+  </ul>
+  <p>문단입니다</p>
+  <p>문단입니다</p>
+  <div>
+    <p>문단입니다</p>
+  </div>
+  <p>문단입니다</p>
+
+</body>
+</html>

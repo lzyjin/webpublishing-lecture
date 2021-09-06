@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이미지맵</title>
+</head>
+<body>
+  <h1>이미지맵 : 하나의 이미지에서 여러개의 링크 걸기</h1>
+  <img src="/tip/images/imagemap-1.jpg" usemap="#go-to-buy"  alt="">
+  <map name="go-to-buy">
+    <area shape="rect" coords="253,686,431,731" href="" title="go to buy">
+    <!-- 좌표 : 왼쪽상단 x, y 좌표값, 오른쪽하단 x, y좌표값 -->
+  </map>
+
+  <br><br>
+
+  <img src="/tip/images/browsers.png" usemap="#browsers" width="500px">
+  <map name="browsers">
+    원의 좌표값 : 원의 중앙, x좌표값, y좌표값 
+    <area shape="circle" coords="" href="" alt="">
+  </map>
+</body>
+</html>
