@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+  width: 200px;
+  height: 200px;
+  background-color: dodgerblue;
+  border: 10px solid orange;
+  margin: 10px;
+  float: left;
+  text-align: center;
+}
+.box1 {
+  border-radius: 20px;
+}
+.box2 {
+  border-radius: 50px;
+}
+.box3 {
+  /* 완벽한 원 : 50% 또는 100% */
+  border-radius: 50%;
+  /* width값으로 해도 되긴된다 */
+  /* border-radius: 200px; */
+}
+.box4 {
+  border-radius: 50px 0;
+}
+.box5 {
+  border-radius: 200px 0 0 0;
+}
+.box6 {
+  /* border-radius: 50% 50% 50% 0; */
+  /* 또는  */
+  border-radius: 200px 200px 200px 0;
+}
+.box7 {
+  border-radius: 200px 0;
+}
+.box8 {
+  border-radius: 50% 50% 0 0;
+  /* 또는 */
+  /* border-radius: 100px 100px 0 0; */
+}
+
+  </style>
+</head>
+<body>
+  <p>
+    border-radius 는 4가지 형태로 작성할 수 있다
+    1. border-radius : 15px;  ( 왼쪽위부터 시작해서 시계방향으로  )
+    2. border-radius : 15px 50px; ( 좌상우하(왼쪽대각선)  우상좌하(오른쪽대각선) )
+    3. border-radius : 15px 50px 30px;
+    4. border-radius : 15px 50px 30px 5px;
+
+    값이 하나이면 좌상 우상  우하  좌하 모두에 적용 
+  </p>
+  <div class="box1">box1</div>
+  <div class="box2">box2</div>
+  <div class="box3">box3</div>
+  <div class="box4">box4</div>
+  <div class="box5">box5</div>
+  <div class="box6">box6</div>
+  <div class="box7">box7</div>
+  <div class="box8">box8</div>
+</body>
+</html>

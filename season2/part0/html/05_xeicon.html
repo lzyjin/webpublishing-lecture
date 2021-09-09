@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>xeicon 사용하기</title>
+  <!-- <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> -->
+</head>
+<style>
+  @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+  /* .xi-close-thin { 또는 직접 지정한 클래스로 선택 */
+  .close {
+    color: crimson;
+  }
+
+  .box {
+    border: 1px solid #000;
+    width: 50px;
+    height: 50px;
+  }
+  .box::before {
+    /* xeicon은 유니코드를 따로 제공하지 않으므로 개발자도구로 찾아내야함 */
+    content: '\e91c';
+    font-family: xeicon;
+  }
+</style>
+<body>
+  <i class="xi-close-thin close"></i>
+
+  <div class="box">
+    <!-- <i class="xi-bars"></i> -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+.container {
+  /* text-align: center; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.icon {
+  /* display: inline-block; */
+
+  /* border: 1px solid red; */
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+
+  position: relative;
+
+  cursor: pointer;
+}
+.icon span {
+  /* display: none; */
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+  /* visibility: hidden; 까지 하면 존재가 사라지므로 커서가 인식하지 못한다 */
+  /* visibility: hidden; 대신에 pointer-events: none; 사용해도 된다 */
+  
+  position: absolute;
+  /* position: absolute; 
+    -> 이 요소가 인라인이든 블럭이던 결국 inline-block이 된다 */
+
+  /* 그래서 content에 딱맞게 되므로  width를 다시 정해줘야함 */
+  width: 300px;
+  padding: 10px;
+
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 이렇게 하면 width가 커져도 작아져도 항상 중앙에 정렬됌 */
+}
+
+.icon span:after {
+  content: '';
+  position: absolute;
+  /* background-color: red; */
+  background-color: #000;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg) translateX(-50%);
+  bottom: -7px;
+  left: 50%;
+  /* transform: translateX(-50%); 
+   transform 속성을 이렇게 두개로 쓰면 밑에것이 덮어써버림 -> 하나로 합칠 것 */
+
+  /* span에 붙을 이 요소는 부모가 span인데 그러면 
+  span이 position: relative; 여야 하는데 이미 
+  position: absolute;로 되어있다.
+  -> relative 도 가지고 있다는 의미로 따로 또 작성하지 않고 사용할수있다 */
+}
+
+.icon:hover span {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+}

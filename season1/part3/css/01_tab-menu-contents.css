@@ -1,0 +1,65 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.testimonial-section {
+  /* border: 1px solid red; */
+  background-color: #fff;
+  width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.testimonial-section h1 {
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+.testimonial-section h1 span {
+  color: crimson;
+}
+
+.testimonial-pics {}
+
+.testimonial-pics img {
+  width: 100px;
+  filter: grayscale(1);
+  margin: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.testimonial-pics img.active {
+  /* 같은 결과 */
+  /* filter: grayscale(0); */
+  filter: none;
+
+  border-radius: 50%;
+}
+
+.testimonial-contents {}
+.content {
+  display: none;
+}
+.content.active {
+  display: block;
+}
+.content p:nth-child(2) {
+  font-weight: bolder;
+}

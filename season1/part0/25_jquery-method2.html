@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {}
+
+    .container a {
+      display: inline-block;
+      background-color: #ccc;
+      padding: 5px;
+      text-align: center;
+      width: 100px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .box,
+    .box3 {
+      width: 340px;
+      height: 300px;
+      background-color: dodgerblue;
+      margin-top: 10px;
+      color: #fff;
+      text-align: center;
+      line-height: 300px;
+    }
+
+    .container div.active {
+      background-color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>제이쿼리 메소드 - 클래스 제어(넣기 빼기) </h1>
+  <p>
+    addClass(), removeClass(), toggleClass()
+  </p>
+
+  <div class="container">
+    <a class="add-btn" href="#none">넣기</a>
+    <a class="remove-btn" href="#none">빼기</a>
+    <a class="toggle-active-btn" href="#none">토글</a>
+    <div class="box3">
+      box
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+
+      $('.add-btn').click(function () {
+        $('.box3').addClass('active');
+      });
+      $('.remove-btn').click(function () {
+        $('.box3').removeClass('active');
+      });
+      $('.toggle-active-btn').click(function () {
+        $('.box3').toggleClass('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

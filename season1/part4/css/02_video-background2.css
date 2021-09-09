@@ -1,0 +1,143 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('http://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  margin: 0;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+a {
+  text-decoration: none;
+}
+
+
+
+/* --- background video --- */
+
+.container {}
+.video-frame {}
+.video-frame video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+
+  /* 동영상을 배경으로 하므로 z-index를 낮춰서 로고나 글씨가 위로 올라오도록 */
+  z-index: -1;
+}
+
+
+
+/* --- logo ---  */
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+/* --- heading --- */
+
+.heading {
+  position: absolute;
+  width: 700px;
+  left: 100px;
+  bottom: 80px;
+
+  /* 애니메이션이름 지속시간 딜레이시간 부드럽게처리 */
+  animation: showing1 2s 1s linear;
+  /* 애니메이션 끝나고 다시 0%로 스탠바이하는것을 하지마 */
+  animation-fill-mode: both;
+}
+.heading h1 {
+  font-size: 40px;
+  margin: 0;
+}
+.heading h1 span {
+  display: block;
+  color: crimson;
+}
+.heading p {
+  /* 1em : body서식의 기본 텍스트 사이즈 */
+  /* font-size: 1.2em; */
+}
+.btn-book,
+.btn-learn {
+  border-radius: 30px;
+  border: 1px solid #fff;
+
+  /* 두 버튼의 크기를 동일하게 하려고 width를 정함  */
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+  margin-right: 10px;
+  transition: 0.3s
+}
+.btn-book {
+  color: #000;
+  background-color: #fff;
+}
+.btn-learn {
+  color: #fff;
+  background-color: transparent;
+}
+.btn-book:hover {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+}
+.btn-learn:hover {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+}
+
+/* --- anniversary --- */
+.anniversary {
+  position: absolute;
+  /* border: 1px solid red; */
+  display: inline-block;
+  right: 80px;
+  bottom: 80px;
+  text-align: center;
+  color: #000;
+
+  animation: showing2 1s 3s linear;
+  animation-fill-mode: both;
+}
+.anniversary em {
+  display: block;
+  font-style: normal;
+  margin-bottom: -5px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+.anniversary span {
+  font-size: 60px;
+  font-family: 'Monoton', sans-serif;
+}
+
+@keyframes showing1 {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@keyframes showing2 {
+  0% {
+    opacity: 0;
+    margin-right: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>비디오 백그라운드를 활용한 랜딩페이지 - 웹폰트, 동영상 제어, 로고</title>
+  <link rel="stylesheet" href="/part4/css/03_video-bg-fullscreen-navi.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 비디오태그에는 가상클래스(before after)를 쓸수없으므로 비디오태그를 감싸는 태그가 필요 -->
+    <!-- video태그의 muted 속성 : 음소거 -->
+    <!-- video태그의 poster 속성 : 만약에 비디오가 재생되지 않으면 흰화면이 뜨므로 그때 띄워줄 이미지 -->
+    <div class="video-frame">
+      <video src="/part4/images/video-female.mp4" autoplay muted loop poster="/part4/images/"></video>
+    </div>
+
+    <!-- 이미지태그도 가상클래스(before after)를 쓸수없으므로 이미지태그를 감싸는 태그가 필요 -->
+    <div class="logo">
+      <img src="/part4/images/logo.png" alt="">
+    </div>
+
+    <div class="heading">
+      <h1><span>Wave Ocean</span> The World's Ocean</h1>
+      <p>
+        The Atlantic Ocean is situated between the Americas and European/African continents. Atlantic Ocean is the second largest and saltiest ocean in the world. It resembles an S-shape between the Americas, Europe and Africa. “Atlantic” originated from the Greek god “Atlas” who carried the sky for eternity.
+      </p>
+      <a class="btn-book" href="#none">Book Now</a>
+      <a class="btn-learn" href="#none">Learn More</a>
+    </div>
+
+    <div class="anniversary">
+      <em>Anniversary</em>
+      <span>60</span>
+    </div>
+
+    <div class="trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- modal-gnb : 검은색으로 풀스크린될 내비의 배경 
+    gnb : 내비 부분 -->
+    <div class="modal-gnb">
+      <div class="gnb">
+        <a href="#none">Attractions</a>
+        <a href="#none">Hotels & Spa</a>
+        <a href="#none">Shop & Dine</a>
+        <a href="#none">Celebrate</a>
+        <a href="#none">Promotions</a>
+      </div>
+    </div>
+
+    <audio id="bgm" 
+          src="/part4/images/piano-bgm.mp3"
+          autoplay loop></audio>
+
+  </div>
+
+  <script>
+    $( function() {
+      
+      // nav 열기 닫기 toggle
+      $('.trigger').click( function() {
+        $(this).toggleClass('active');
+        $('.modal-gnb').fadeToggle();
+      });  
+
+      // 오디오 음량 컨트롤
+      // 0에서 1사이의 숫자로 컨트롤 
+      document.getElementById('bgm').volume = 0.3;
+    } );
+    // good
+  </script>
+</body>
+
+</html>

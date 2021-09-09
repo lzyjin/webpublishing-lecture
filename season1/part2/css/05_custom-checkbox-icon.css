@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height: 1.5em;
+	font-weight: 300;
+	/* background: linear-gradient(1800deg, #dce35b, #45b649); */
+  height: 100vh;
+	margin: 0;
+	font-size: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+form input[type=checkbox] {
+  display: none;
+}
+form label {
+  display: block;
+  cursor: pointer;
+}
+form label::before {
+  content: '\f00c';
+  font-family: fontawesome;
+
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+
+  border: 1px solid #333;
+  border-radius: 3px;
+
+  font-size: 13px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 16px;
+  margin-right: 5px;
+  color: transparent;
+
+  transition: 0.3s;
+}
+form input[type=checkbox]:checked + label::before {
+  background-color: crimson;
+  color: #fff;
+  border: 1px solid transparent;
+}
+form input[type=checkbox] + label:active::before {
+  transform: scale(0);
+}

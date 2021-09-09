@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>순서를 만드는 css 가상클래스 - nth-child, nth-of-type</title>
+  <style>
+    .box {
+      border: 5px solid black;
+
+      /* 자식요소가 inline-block일때 자식요소들을 가운데로 정렬하는것 */
+      text-align: center;
+    }
+    .box div {
+      width: 100px;
+      height: 100px;
+      border: 5px solid black;
+      display: inline-block;
+      margin: 10px;
+    }
+    /* .box div:nth-child(1) {
+      background-color: dodgerblue;
+    }
+    .box div:nth-child(2) {
+      background-color: crimson;
+    }
+    .box div:nth-child(3) {
+      background-color: gold;
+    }
+    .box div:nth-child(4) {
+      background-color: yellowgreen;
+    } */
+
+    .box div:nth-of-type(1) {
+      background-color: dodgerblue;
+    }
+    .box div:nth-of-type(2) {
+      background-color: crimson;
+    }
+    .box div:nth-of-type(3) {
+      background-color: gold;
+    }
+    .box div:nth-of-type(4) {
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>순서를 만드는 css 가상클래스 - nth-child, nth-of-type</h1>
+  <p>
+    순서 가상클래스를 사용하는 목적은 클래스이름을 주지 않고 요소를 선택하기 위함
+    -> html코드가 깨끗해짐 -> 관리가 쉽다
+  </p>
+  <p>
+    nth-child : 태그를 체크하지 않고 모든 자식요소에 순서를 부여 <br>
+    nth-of-type : 태그를 체크하여 순서를 부여 ( h2 태그의 위치가 달라져도 div 태그의 스타일엔 변함이 없다 )
+  </p>
+  <div class="box">
+    <div></div>
+    <div></div>
+    <h2>Heading Text</h2>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

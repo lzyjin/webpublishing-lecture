@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>포지셔닝 - 자동 수평수직 중앙정렬</title>
+  <style>
+    .parent {
+      position : relative;
+
+      width: 500px;
+      height: 500px;
+      border: 1px solid #000;
+    }
+    .child {
+      position: absolute;
+
+      background-color: pink;
+      width: 100px;
+      height: 100px;
+
+      /* 왼쪽위 */
+      /* top: 0;
+      left: 0; */
+
+      /* 왼쪽아래 */
+      /* left: 0;
+      bottom: 0; */
+
+      /* 오른쪽아래 */
+      /* right: 0;
+      bottom: 0; */
+
+      /* 오른쪽위 */
+      /* right: 0;
+      top: 0; */
+
+      /* 정가운데에 정렬 */
+      top: 50%;
+      left: 50%;
+      /* 자식요소의 크기가 변하더라도 중앙정렬을 유지하게끔 -50%로 값을 준다  */
+      transform: translate(-50%, -50%); 
+    }
+  </style>
+</head>
+
+<body>
+  <p>left, right, top, bottom 좌표속성과 z-index 속성은 position 속성과 반드시 함께 사용해야한다</p>
+  <h1>좌상, 좌하, 우상, 우하, 중앙 정렬</h1>
+  <p>
+    정렬시킬 부모요소에는 position : relative;, 
+    정렬될 요소(자식요소)에는 position: absolute;
+    <br>
+    하지만 자식요소를 브라우저상의 중앙에 배열하려면
+    position : relative;가 없어야한다
+  </p>
+
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+
+</body>
+
+</html>
