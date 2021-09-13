@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Temp CSS  */
+/* .shape img {
+  display: none;
+} */
+/* .caption {
+  display: none;
+} */
+
+
+
+.frame {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 40px;
+}
+.hexagon {
+  /* border: 1px solid blue; */
+  width: 300px;
+  height: 350px;
+  /* .shape의 부모 */
+  position: relative;
+  transition: 0.5s;
+}
+.shape {
+  clip-path: polygon(50% 0, 100% 30%, 100% 70%, 50% 100%, 0 70%, 0 30%);
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  /* 살짝씩 보이는 그라디언트 줄 안보이도록 */
+  overflow: hidden;
+}
+.shape img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+.hexagon:nth-of-type(1) .shape img {
+  object-position: right;
+}
+.caption {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  color: #fff;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.hexagon:nth-child(1) .caption {
+  background: linear-gradient(to top, crimson, transparent);
+}
+.hexagon:nth-child(2) .caption {
+  background: linear-gradient(to top, dodgerblue, transparent);
+}
+.hexagon:nth-child(3) .caption {
+  background: linear-gradient(to top, green, transparent);
+}
+
+/* hover effect  */
+.hexagon:hover {
+  transform: translateY(-50px);
+}
+.hexagon:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* shodow  */
+.hexagon::before {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  background: radial-gradient(rgba(0, 0, 0, 0.3), transparent, transparent);
+  transition: 0.5s;
+}
+.hexagon:hover::before {
+  opacity: 0.6;
+  transform: scale(0.8);
+  bottom: -120px;
+}

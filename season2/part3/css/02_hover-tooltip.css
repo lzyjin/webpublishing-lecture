@@ -1,0 +1,51 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.tooltip {
+  /* border: 1px solid red; */
+  position: relative;
+}
+.tooltip .fas {
+  font-size: 50px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+.tooltip span {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  border-radius: 3px;
+  padding: 7px;
+  width: 350px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.tooltip span::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  /* border: 1px solid red; */
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.tooltip .fas:hover~span {
+  opacity: 1;
+  visibility: visible;
+}

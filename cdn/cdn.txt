@@ -1,5 +1,8 @@
-/* 폰트어썸 cdn  */
+/* 폰트어썸 버전 4.7 cdn  */
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* 폰트어썸 버전 5 cdn  */
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 /* xeicon cdn */
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
