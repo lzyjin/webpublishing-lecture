@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap');
+
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+* {
+  box-sizing: border-box;
+}
+/* h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+} */
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #222;
+  /* 은은한 엷은 배경색 : #f4f4f4, #fafafa, #f8f8f8 */
+  background-color: #f4f4f4;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+.content {
+  /* border: 1px solid red; */
+  width: 1100px;
+  text-align: center;
+}
+.content h1 {
+  font-weight: normal;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+.items {
+  /* border: 1px solid blue; */
+}
+.item {
+  display: inline-block;
+  width: 300px;
+  /* height: 500px; */
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(-10deg);
+}
+.item:nth-child(1),
+.item:nth-child(1)>.fas {
+  background-image: linear-gradient(-45deg, #fc5c5e 0%, #f9d423 100%);
+}
+.item:nth-child(2),
+.item:nth-child(2)>.fas {
+  background-image: linear-gradient(-45deg, #50cc7f 0%, #f5d100 100%);
+}
+.item:nth-child(3),
+.item:nth-child(3)>.fas {
+  background-image: linear-gradient(-45deg, #209cff 0%, #68e0cf 100%);
+}
+.item>.fas {
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
+  border-radius: 50%;
+  line-height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.item:nth-child(2)>.fas {
+  transform: rotate(-45deg);
+}
+
+.item h3 {
+  font-size: 20px;
+
+}
+.item h2 {
+  font-size: 50px;
+  margin: 0;
+}
+.item ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+
+   /* .item의 before가 ul을 덮어버려 호버가 안되는 현상 해결 */
+  /* position: absolute 보다 position:relative가 우선하기때문에  */
+  position: relative;
+}
+.item li .fas {
+  margin-right: 7px;
+}
+.btn-order {
+  display: inline-block;
+  width: 130px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 30px;
+  transition: 0.3s;
+
+  /* .item의 before가 버튼을 덮어버려 호버가 안되는 현상 해결 */
+  /* position: absolute 보다 position:relative가 우선하기때문에  */
+  position: relative;
+}
+.btn-order:hover {
+  background-color: #000;
+  color: #fff;
+}
+.item:hover {
+  transform: scale(1.05);
+}
