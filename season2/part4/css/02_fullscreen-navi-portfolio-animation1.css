@@ -48,20 +48,35 @@ body {
 
 /* Overlay  */
 .overlay {
-  background-color: #000;
-  width: 40px;
-  height: 40px;
   position: fixed;
-  border-radius: 50%;
-  top: 20px;
-  left: 20px;
-  transition: 0.5s;
-  opacity: 0;
   z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
-.overlay.active {
-  transform: scale(150);
-  opacity: 1;
+/* 오버레이 애니메이션 방법1 - 상하로 나타내기 */
+.overlay::before,
+.overlay::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  /* height: 50%; */
+  height: 0;
+  background-color: #000;
+  transition: 0.35s;
+}
+.overlay::before {
+  top: 0;
+}
+.overlay::after {
+  bottom: 0;
+}
+.overlay.active::before {
+  height: 50%;
+}
+.overlay.active::after {
+  height: 50%;
 }
 
 /* gnb  */

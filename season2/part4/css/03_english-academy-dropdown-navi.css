@@ -1,0 +1,159 @@
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+body {
+  margin: 0;
+  color: #333;
+  line-height: 1.5em;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.container {}
+
+/* ############### Header ############### */
+header {}
+
+/* Banner */
+.banner-outter {
+  position: relative;
+  background: linear-gradient(to right, #00202b 50%, #fff 50%);
+  height: 40px;
+}
+.banner {
+  width: 1450px;
+  margin: auto;
+  height: 40px;
+}
+.banner img {
+  display: block;
+}
+.close-banner {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 26px;
+  color: #aaa;
+  cursor: pointer;
+}
+.close-banner i {}
+
+/* LNB */
+.lnb-outter {
+  background-color: #adcae8;
+}
+.lnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1450px;
+  margin: auto;
+  padding: 15px;
+}
+.logo {}
+.logo a {}
+.logo a img {}
+.lnb-navi {}
+.lnb-navi a {
+}
+.lnb-navi a:hover {
+  color: #FF5643;
+}
+.lnb-navi a::after {
+  content: '|';
+  color: #bbb;
+  margin-right: 5px;
+  padding-left: 5px;
+}
+.lnb-navi a:last-child::after {
+  display: none;
+}
+
+/* GNB */
+.gnb-outter {
+  background-color: #272c38;
+}
+nav {
+  width: 1450px;
+  margin: auto;
+}
+
+/* 방법 1. float 사용 */
+/* .gnb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 50px;
+} */
+/* .gnb li {
+  float: left;
+  height: 50px;
+  width: calc(calc(1450px - 50px) / 6);
+  text-align: center;
+  border-right: 1px solid #555;
+}
+.gnb li>a {
+  color: #fff;
+  font-size: 17px;
+  display: block;
+  height: 100%;
+  padding-top: 10px;
+} */
+
+/* 방법 2. flex 사용 */
+.gnb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+/* 중요 ! */
+.gnb li:not(.gnb li:last-child) {
+  height: 50px;
+  border-right: 1px solid #555;
+  flex: 1;
+  text-align: center;
+}
+.gnb li>a {
+  color: #fff;
+  font-size: 17px;
+  height: 100%;
+  display: block;
+  padding-top: 12px;
+}
+
+.gnb li:first-child {
+  background-color: crimson;
+}
+.gnb li:last-child {
+  width: 50px;
+  height: 50px;
+  background-color: pink;
+  border-right: none;
+}
+.badge {
+  font-style: normal;
+  background-color: crimson;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+.dropdown {
+  
+}
+.dropdown a {}
+
+.trigger {}
+.trigger span {}
+
+/* ############### Section ############### */
+section {}
+section img {
+  width: 100%;
+}
