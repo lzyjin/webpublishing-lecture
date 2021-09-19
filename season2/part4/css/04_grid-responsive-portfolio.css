@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Default Css */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  margin: 0;
+  color: #222;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* Reset Css */
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+
+/* Common Css */
+.headline-share {
+  text-align: center;
+}
+.headline-share h1 {
+  font-size: 56px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 30px;
+  margin-bottom: 70px;
+}
+.headline-share h1::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(to right, mediumaquamarine, skyblue);
+}
+.font-noto {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+section {
+  height: 100vh;
+}
+
+/* Section Portfolio */
+section.portfolio {
+  background: url(/season2/part4/images/background.png) no-repeat;
+  background-position: top right;
+  background-size: cover;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  /* justify-content: center;
+  align-items: center; */
+}
+.items {
+  width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.item {
+  border: 1px solid red;
+}
+.item b {}
+.item h2 {}
+.item p {}
+.item.thum {}
+.photo {}
+.portfolio-title {}
+.portfolio-title a {}

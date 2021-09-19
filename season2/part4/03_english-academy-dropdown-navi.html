@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <div class="banner-outter">
+      <div class="banner-outer">
         <div class="banner">
           <span class="close-banner">
             <i class="xi-close-thin"></i>
@@ -17,7 +17,7 @@
           <img src="/season2/part4/images/banner.png" alt="">
         </div>
       </div>
-      <div class="lnb-outter">
+      <div class="lnb-outer">
         <div class="lnb">
           <div class="logo">
             <a href="#none">
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="gnb-outter">
+      <div class="gnb-outer">
         <nav>
           <ul class="gnb">
             <li>
@@ -90,18 +90,81 @@
               </div>
             </li>
           </ul>
+          <div class="sitemap-outer">
+            <div class="sitemap">
+              <div>
+                <b>Guided Lessons</b>
+                <a href="#none">Progress Tracker</a>
+                <a href="#none">Classroom Mode</a>
+                <a href="#none">Skills Progression</a>
+              </div>
+              <div>
+                <b>Learning Library</b>
+                <a href="#none">Worksheets</a>
+                <a href="#none">Games</a>
+                <a href="#none">Workbooks</a>
+                <a href="#none">Activities</a>
+                <a href="#none">Songs</a>
+                <a href="#none">Stories</a>
+                <a href="#none">Exercises</a>
+              </div>
+              <div>
+                <b>Teaching Tools</b>
+                <a href="#none">Lesson Plans</a>
+                <a href="#none">Worksheet Generator</a>
+                <a href="#none">Common Core Resources</a>
+                <a href="#none">More Teaching Tools</a>
+              </div>
+              <div>
+                <b>Schools</b>
+                <a href="#none">Get a Quote</a>
+                <a href="#none">Buy School License</a>
+              </div>
+              <div>
+                <b>Support</b>
+                <a href="#none">Pricing</a>
+                <a href="#none">Give Gift</a>
+                <a href="#none">Redeem Gift</a>
+                <a href="#none">Schools</a>
+                <a href="#none">FAQs</a>
+                <a href="#none">Tell us what you think</a>
+                <a href="#none">Terms of Service</a>
+              </div>
+              <div>
+                <b>About Us</b>
+                <a href="#none">Company</a>
+                <a href="#none">Reviews</a>
+                <a href="#none">Blog</a>
+                <a href="#none">Press</a>
+                <a href="#none">Site Map</a>
+                <a href="#none">Contact Us</a>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
     <section>
       <img src="/season2/part4/images/section-bg.png" alt="">
     </section>
+    <section>
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus iusto alias nostrum aperiam impedit asperiores molestiae quia recusandae est voluptatem! Consectetur rem praesentium necessitatibus dicta, quidem fuga. Totam, tenetur aliquid!
+      </p>
+    </section>
   </div>
 
   <script>
     $('.close-banner').click(function() {
-      $('.banner-outter').slideUp();
-      // $('.banner-outter').hide();
+      $('.banner-outer').slideUp();
+      // $('.banner-outer').hide();
+    });
+    $('.trigger').click(function() {
+      $(this).parent().toggleClass('active');
+      $(this).toggleClass('active');
+      $('.sitemap-outer').fadeToggle();
+      // $('.sitemap-outer').slideToggle();
     });
   </script>
 </body>
