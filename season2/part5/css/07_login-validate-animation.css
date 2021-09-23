@@ -63,10 +63,12 @@ a {
   color: #fff;
   font-size: 18px;
 }
-.input-field input:focus+span {
+.input-field input:focus+span,
+.input-field input:valid+span {
   top: 0;
   font-size: 12px;
   color: #1bbe93;
+  font-weight: 500;
 }
 .input-field span {
   position: absolute;
@@ -74,6 +76,24 @@ a {
   left: 0;
   transition: 0.3s;
   pointer-events: none;
+}
+.input-field span.warning {
+  color: crimson !important;
+  animation: warning 0.3s ease-in-out 2;
+}
+@keyframes warning {
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
 }
 .button-field {}
 .button-field input[type=submit] {
@@ -96,6 +116,7 @@ a {
   font-size: 12px;
   float: left;
   cursor: pointer;
+  color: #bbb;
 }
 .add-info label em {
   font-style: normal;
@@ -107,7 +128,8 @@ a {
   height: 10px;
   background-color: transparent;
   border-radius: 50%;
-  border: 1px solid #fff;
+  color: transparent;
+  border: 1px solid #ccc;
   margin-right: 5px;
 }
 .add-info label input {
