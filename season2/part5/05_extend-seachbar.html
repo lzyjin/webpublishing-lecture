@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>검색창 확장하기</title>
+  <link rel="stylesheet" href="./css/05_extend-seachbar.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+      <div class="search">
+        <span class="clear">
+          <i class="xi-close-thin"></i>
+        </span>
+        <div class="icon">
+          <i class="xi-search"></i>
+        </div>
+        <div class="input-frame">
+          <input id="searchInput" type="text" placeholder="Type Here...">
+        </div>
+      </div>
+    </header>
+    <section>
+      <h1>This is Section #01</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et earum, fuga asperiores sequi saepe aperiam officia eaque nostrum unde corrupti ex quidem itaque, animi velit exercitationem ducimus nihil vero quas? Dolor repellat totam porro, cum officia perferendis quas placeat tempora numquam distinctio quidem hic minima aliquid excepturi obcaecati nulla, similique, quibusdam exercitationem? Voluptatem deserunt atque facilis suscipit nobis. Tempora cumque omnis labore sunt, fugiat quis ex, dolorem dignissimos, sequi quidem quas temporibus quisquam. Tempore deleniti eum dolorem, suscipit nobis iure veniam reprehenderit amet dolores, nam sapiente natus quo pariatur, similique facilis corrupti. Esse natus quis omnis similique culpa veniam?
+      </p>
+    </section>
+    <section>
+      <h1>This is Section #02</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et earum, fuga asperiores sequi saepe aperiam officia eaque nostrum unde corrupti ex quidem itaque, animi velit exercitationem ducimus nihil vero quas? Dolor repellat totam porro, cum officia perferendis quas placeat tempora numquam distinctio quidem hic minima aliquid excepturi obcaecati nulla, similique, quibusdam exercitationem? Voluptatem deserunt atque facilis suscipit nobis. Tempora cumque omnis labore sunt, fugiat quis ex, dolorem dignissimos, sequi quidem quas temporibus quisquam. Tempore deleniti eum dolorem, suscipit nobis iure veniam reprehenderit amet dolores, nam sapiente natus quo pariatur, similique facilis corrupti. Esse natus quis omnis similique culpa veniam?
+      </p>
+    </section>
+  </div>
+  
+  <script>
+    // 1. 아이콘 클릭하면 검색창이 펼쳐졌다가 닫혔다가 
+    // $('.icon').click(function() {
+    //   $('.search').toggleClass('active');
+    // });
+
+    // 자바스크립트로 
+    var search = document.querySelector('.search'),
+    icon = document.querySelector('.icon'),
+    clear = document.querySelector('.clear'),
+    searchInput = document.getElementById('searchInput'),
+    section = document.getElementsByTagName('section');
+    
+
+    // icon.onclick = function() {
+    //   search.classList.toggle('active');
+    // }
+    icon.addEventListener('click', function() {
+      search.classList.toggle('active');
+    });
+
+
+    // 2. x버튼을 클릭하면 검색키워드가 리셋
+    // $('.clear').click(function() {
+    //   $('#searchInput').val('');
+    // });
+
+    // 자바스크립트로
+    clear.onclick = function() {
+      searchInput.value = '';
+    }
+
+    // 3. section을 클릭하면 펼쳐져있는 검색창이 닫히도록
+    // $('section').click(function() {
+    //   $('.search').removeClass('active');
+    // });
+
+    // 자바스크립트로 
+    // section이 여러개니까 for문으로
+    for(var i=0; i < section.length; i++) {
+      section[i].onclick = function() {
+        search.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
