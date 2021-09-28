@@ -135,32 +135,32 @@ header .download.active {
   transform: translate(-50%, -50%);
   /* border: 1px solid red; */
   width: 950px;
+  height: 75%;
   text-align: center;
 }
 .heading img:nth-of-type(1) {
-  width: 80px;
+  width: 60px;
 }
 .heading h1 {
-  font-size: 60px;
-  margin-top: 40px;
-  margin-bottom: 60px;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
-.heading .btn-download {}
 .heading p {
   font-size: 12px;
   margin-top: 15px;
 }
 .heading .read-more {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .heading img:nth-of-type(2) {
-  margin-top: 70px;
-  width: 800px;
+  margin-top: 30px;
+  width: 400px;
 }
 /* Btn : Next Section  */
 .next-section {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -168,11 +168,11 @@ header .download.active {
   display: inline-block;
   background-color: #fff;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  font-size: 35px;
-  line-height: 55px;
+  font-size: 30px;
+  line-height: 45px;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
   color: #333;
 }
@@ -262,14 +262,14 @@ header .download.active {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 200px;
-  width: 400px;
+  left: 100px;
+  width: 370px;
   z-index: 10;
 }
 .download-heading h1 {
   font-size: 48px;
   line-height: 1.2em;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #fff;
 }
 .download-heading .btn-download {
@@ -364,6 +364,10 @@ footer {
 .link-item-title {
   margin-bottom: 5px;
   font-size: 17px;
+
+    /* 중요!!! */
+  /* 제이쿼리로 모바일width일때 슬라이드토글을 만들어놨기 때문에 그 이벤트를 막는 역할 */
+  pointer-events: none;
 }
 .link-item-content {}
 .link-item-content a {
@@ -374,18 +378,14 @@ footer {
 .link-item-content a em {
   font-style: normal;
 }
-.link-item-content a em:after {
-  content: '\e907';
-  position: absolute;
-  font-family: xeicon;
-  margin-left: 5px;
-  transform: rotate(-45deg);
-  transition: 0.2s;
+.link-item-content a em i {
+    margin-left: 5px;
+    transform: rotate(-45deg);
 }
 .link-item-content a:hover {
   color: #000;
 }
-.link-item-content a:hover em::after {
+.link-item-content a:hover em i {
   transform: rotate(-45deg) translateX(5px);
 }
 /* copyright */
@@ -440,5 +440,4 @@ footer {
   font-size: 16px;
   color: #666;
 }
-
 

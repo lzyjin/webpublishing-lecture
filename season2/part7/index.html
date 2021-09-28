@@ -233,6 +233,19 @@
         }
       });
     })
+
+    $('.link-item-title').click(function() {
+        // 클릭한 애의 화살표 모양 위로바라보는 모양으로 바뀜 ( 토글 )
+        $(this).toggleClass('active');
+        // 다른 애들의 화살표 모양 초기화 
+        $(this).parent().siblings().children('.link-item-title').removeClass('active');
+
+        // 클릭한 애 이외의 컨텐츠 slide up 
+        $(this).parent().siblings().children('.link-item-content').slideUp();
+        // 클릭한 애의 컨텐츠 slide up 
+        $(this).next().siblings('.link-item-content').slideUp();
+        $(this).next().slideToggle();
+    });
   </script>
 </body>
 </html>
