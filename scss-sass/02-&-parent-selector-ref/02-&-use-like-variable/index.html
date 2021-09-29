@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>부모 선택자 참조 & 응용</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>&를 응용해서 변수처럼 사용하기</h1>
+  <p>
+    scss에서는 &(Ampersand)를 응용하면 변수는 아니지만 변수처럼 효율적으로 사용할 수 있다.
+  </p>
+  <p>
+    폰트사이즈, 색상 등 웹페이지에 자주 사용되는 클래스 네임을 미리 세팅하는 용도로 사용하면 효율적이다
+  </p>
+  <pre>
+    예시) & = .font
+
+    .font {
+      &-large {
+        font-size: 60px;
+        color: crimson;
+      }
+      &-medium {
+        font-size: 40px;
+        color: yellowgreen;
+      }
+    }
+  </pre>
+  <hr>
+
+  <section>
+    <h1 class="font-large">This is h1 headline</h1>
+    <h2 class="font-medium">This is h2 headline</h2>
+    <h3 class="font-small">This is h3 headline</h3>
+  </section>
+</body>
+</html>
