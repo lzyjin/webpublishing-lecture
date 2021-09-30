@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 var(--변수) 사용하기</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>변수 var(--변수) 사용하기</h1>
+  <p>
+
+  </p>
+  <pre>
+    변수 선언)
+    :root {
+      --변수명: 값;
+    }
+
+    변수 사용)  
+    선택자 {
+      속성: var(--변수명);
+    }
+
+
+    예시)
+    :root {
+      --primary: skyblue;
+      --secondary: black;
+    }
+
+    .btn {
+      background-color: var(--secondary);
+    }
+  </pre>
+  <hr>
+
+  <div class="btns">
+    <button class="btn primary">primary button</button>
+    <button class="btn secondary">secondary button</button>
+    <button class="btn warning">warning button</button>
+    <button class="btn danger">danger button</button>
+  </div>
+</body>
+</html>

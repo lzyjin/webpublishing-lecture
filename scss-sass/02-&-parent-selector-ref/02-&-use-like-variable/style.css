@@ -7,11 +7,9 @@
 .font-medium {
   font-size: 40px;
   color: yellowgreen;
-  text-transform: uppercase;
 }
 
 .font-small {
   font-size: 20px;
   color: royalblue;
-  text-transform: uppercase;
 }

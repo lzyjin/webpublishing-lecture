@@ -1,0 +1,12 @@
+.container {
+  color: #000;
+}
+
+.container .items h1, .container .news h1 {
+  color: #333;
+  padding: 10px;
+}
+
+.container .items h2, .container .news h2 {
+  color: #555;
+}

@@ -1,0 +1,17 @@
+$container-color: #000;
+$heading-color:#333;
+$sub-heading-color: #555;
+$heading-padding: 10px;
+
+.container {
+  color: $container-color;
+  .items, .news {
+    h1 {
+      color: $heading-color;
+      padding: $heading-padding;
+    }
+    h2 {
+      color: $sub-heading-color;
+    }
+  }
+}
