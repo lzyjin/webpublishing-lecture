@@ -1,0 +1,17 @@
+.item {
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 300px;
+  background-color: crimson;
+}
+
+.frame {
+  height: 200px;
+}
+
+pre {
+  display: inline-block;
+}

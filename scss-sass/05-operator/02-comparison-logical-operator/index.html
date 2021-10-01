@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비교연산자, 논리연산자</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <b>별3개</b>
+  <h1>scss에서 연산 사용하기 - 비교연산자, 논리연산자</h1>
+  <p>
+    비교연산자, 논리연산자는 조건문, 반복문 등 scss 프로그래밍에 주로 사용되는 연산자.
+  </p>
+  <pre>
+    비교연산자
+
+    종류 / 기능
+    == : 동등
+    != : 부등
+    &lt; : 대소(보다 작은)
+    &gt; : 대소(보다 큰)
+    &lt;= : 대소 및 동등(보다 작거나 같은)
+    &gt;= : 대소 및 동등(보다 크거나 같은)
+
+    예시)
+    $width: 300px;
+
+    .item {
+      width: $width;
+      @if($width >= 300) {
+        background-color: crimson;
+      }
+      @else if($width &lt; 300) {
+        background-color: royalblue;
+      }
+    }
+  </pre>
+  <pre>
+    논리연산자
+
+    종류 / 기능
+    and : 그리고
+    or : 또는
+    not : 부정
+
+
+    
+
+    예시)
+    $size: 100px;
+
+    .frame {
+      @if($size > 50px and $size &lt;= 150px) {
+        height: 200px;
+      }
+    }
+
+
+
+
+  </pre>
+</body>
+</html>

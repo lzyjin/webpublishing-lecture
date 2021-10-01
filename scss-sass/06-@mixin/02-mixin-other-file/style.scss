@@ -1,0 +1,5 @@
+@import "mixin";
+
+.frame h2 {
+  @include heading;
+}
