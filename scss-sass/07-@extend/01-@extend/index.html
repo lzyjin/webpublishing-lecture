@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 속성을 가져오는 @extend</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <b>별5개</b>
+  <h1>scss에서 선택자의 모든 css 속성을 가져오기 - @extend</h1>
+  <p>
+    @extend를 사용해서 원하는 선택자의 모든 css 속성을 가져와서 붙여넣기 하는 기능
+  </p>
+  <p>
+    <b style="color: red;">연관 있는 반복에는 @extend를 사용하자. 그냥 같을 뿐이라면 @mixin을 사용하자</b>
+  </p>
+  <p>
+    @mixin은 연관성이 없는 반복되는 규칙을 따로 만들어서 사용하는 것.
+    @mixin과 다르게 @extend를 사용한 선택자간의 연관성이 생성된다.
+    즉, 해당 속성을 적용한 선택자들을 콤마(,)로 묶는다. 
+  </p>
+  <pre>
+    scss 선언 방식)
+
+    @extend 선택자; 
+
+    사용 예시)
+  </pre>
+  <pre>
+    // SCSS
+    %site_color {
+      color: #f00;
+    }
+    
+    /* ...중략 */
+    
+    .main_conatiner {
+      @extend %site_color;
+    }
+    
+    /* ...중략 */
+    
+    .view_container {
+      @extend %site_color;
+    }
+    
+    /* ...중략 */
+    
+    .detail_container {
+      @extend %site_color;
+    }
+    
+    // CSS
+    .main_conatiner, .view_container, .detail_container {
+      color: #f00; 
+    }
+    
+    /* ...중략 */
+    
+    .main_conatiner {}
+    
+    /* ...중략 */
+    
+    .view_container{}
+    
+    /* ...중략 */
+    
+    .detail_container {}
+  </pre>
+  <p>
+    위에 작성한 .main_conatiner,.view_container,.detail_container는 서로 연관성이 없는 클래스입니다. <br>
+    하지만 해당 클래스의 color값이 동일하다는 이유로 site_color라는 값을 모두 extend해서 사용하고있습니다. <br>
+    위 코드를 컴파일하면 아래 .css파일이 생성됩니다. <br>
+    css코드를 보면, 전혀 연관성이 없는클래스들이 같이 선언이 되어있기 때문에 수백줄이 떨어져있던 클래스가 한 곳에 작성이 되는 불규칙한 상황이 발생했습니다.
+  </p>
+  <p>
+    선택자간의 연관성이 존재한다면 extend를 사용하고, <br>
+    연관성은 없지만 코드가 겹치는 선택자들이라면 mixin으로 소스코드의 중복을 없애기 위해 사용해야합니다.
+  </p>
+
+  <hr>
+
+  <button class="btn">initial button</button>
+  <div class="buttons">
+    <button class="order">order now</button>
+    <button class="add">add cart</button>
+    <button class="checkout">check out</button>
+  </div>
+
+  <pre style="display: inline-block;">
+    // scss
+    .btn {
+      width: 200px;
+      padding: 7px;
+      background-color: #fff;
+      font-size: 18px;
+      text-transform: capitalize;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    .order {
+      @extend .btn;
+      background-color: purple;
+      color: #fff;
+    }
+    .add {
+      @extend .btn;
+      background-color: yellowgreen;
+      color: #fff;
+    }
+    .checkout {
+      @extend .btn;
+      background-color: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+  </pre>
+  <pre style="display: inline-block;">
+    // css
+    .btn, .order, .add, .checkout {
+      width: 200px;
+      padding: 7px;
+      background-color: #fff;
+      font-size: 18px;
+      text-transform: capitalize;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    .order {
+      background-color: purple;
+      color: #fff;
+    }
+    .add {
+      background-color: yellowgreen;
+      color: #fff;
+    }
+    .checkout {
+      background-color: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+    
+  </pre>
+</body>
+</html>

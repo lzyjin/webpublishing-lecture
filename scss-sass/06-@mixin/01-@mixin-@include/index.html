@@ -12,6 +12,13 @@
   <h1>그룹 재사용 선언 @mixin</h1>
   <h3>SCSS에서 재사용할 CSS 그룹을 만들어야 하는 이유</h3>
   <p>
+    <mark>@mixin은 연관성이 없는 반복되는 규칙을 따로 만들어서 사용하는 것.</mark><br>
+    연관성이 없는 선택자에 mixin을 사용했을 경우 컴파일후에도 연관성 없는 선택자들이 따로 선언된다.
+  </p>
+  <p>
+    <b style="color: red;">연관 있는 반복에는 @extend를 사용하자. 그냥 같을 뿐이라면 @mixin을 사용하자</b>
+  </p>
+  <p>
     재사용할 그룹을 선언(정의, 지정)하는 것은 <mark>@mixin</mark><br>
     정의된 @mixin을 사용(포함)하는 것은 <mark>@include</mark>
   </p>
@@ -74,6 +81,102 @@
 
     
   </pre>
+  <pre>
+    예시
+    //SCSS
+    @mixin site_color {
+      color: #f00;
+    }
+    .main_conatiner {
+      @include site_color;
+    }
+    .view_container {
+      @include site_color;
+    }
+    .detail_container {
+      @include site_color;
+    }
+    
+    //CSS
+    .main_conatiner {
+      color: #f00; 
+    }
+    .view_container {
+      color: #f00; 
+    }
+    .detail_container {
+      color: #f00; 
+    }
+  </pre>
+  <pre>
+    // SCSS
+    %site_color {
+      color: #f00;
+    }
+    
+    /* ...중략 */
+    
+    .main_conatiner {
+      @extend %site_color;
+    }
+    
+    /* ...중략 */
+    
+    .view_container {
+      @extend %site_color;
+    }
+    
+    /* ...중략 */
+    
+    .detail_container {
+      @extend %site_color;
+    }
+    
+    // CSS
+    .main_conatiner, .view_container, .detail_container {
+      color: #f00; 
+    }
+    
+    /* ...중략 */
+    
+    .main_conatiner {}
+    
+    /* ...중략 */
+    
+    .view_container{}
+    
+    /* ...중략 */
+    
+    .detail_container {}
+  </pre>
+  <p>
+    위에 작성한 .main_conatiner,.view_container,.detail_container는 서로 연관성이 없는 클래스입니다. <br>
+    하지만 해당 클래스의 color값이 동일하다는 이유로 site_color라는 값을 모두 extend해서 사용하고있습니다. <br>
+    위 코드를 컴파일하면 아래 .css파일이 생성됩니다. <br>
+    css코드를 보면, 전혀 연관성이 없는클래스들이 같이 선언이 되어있기 때문에 수백줄이 떨어져있던 클래스가 한 곳에 작성이 되는 불규칙한 상황이 발생했습니다. <br>
+    아마 pure CSS로 작성을 했다면 아래처럼 작성을 했을 것 같습니다.
+  </p>
+  <pre>
+    .main_conatiner {
+      color: #f00;
+    }
+    
+    /* ...중략 */
+    
+    .view_container{
+      color: #f00;
+    }
+    
+    /* ...중략 */
+    
+    .detail_container {
+      color: #f00;
+    }
+  </pre>
+  <p>
+    서로 연관성이 없는 클래스에 단순히 같은 속성을 부여하기 위해서 extend를 사용할 경우 이러한 문제점을 만드는 것을 확인했습니다. <br>
+    위 코드처럼 컴파일을 하기위해서 사용하는 sass문법이 mixin입니다. 연관성이 없는 반복되는 규칙을 따로 만들어서 사용하는 것입니다.
+  </p>
   <hr>
   <br><br>
 

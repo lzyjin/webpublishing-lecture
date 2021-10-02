@@ -1,0 +1,19 @@
+%shape {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 5px solid #000;
+  display: inline-block;
+}
+.frame div:first-child {
+  @extend %shape;
+  background-color: gold;
+}
+.frame div:last-child {
+  @extend %shape;
+  background-color: tomato;
+}
+pre {
+  display: inline-block;
+}

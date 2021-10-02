@@ -1,0 +1,26 @@
+$this-null: null;
+
+$this-true: true;
+$this-false: false;
+
+$this-number: 777;
+
+$this-string: 'Yejin Zzang';
+$this-string-combine: 'Yejin Zzang' + 'huhuhu';
+
+$this-color1: crimson;
+$this-color2: #000000;
+$this-color3: rgb(34, 60, 173);
+$this-color4: rbga(34, 60, 173, 0.5);
+$this-color-function: lighten(yellowgreen, 25%);
+
+.item::before {
+  content: $this-string;
+  color: $this-color1;
+  margin-right: 10px;
+}
+.item::after {
+  content: $this-string-combine;
+  color: $this-color-function;
+  margin-left: 10px;
+}
