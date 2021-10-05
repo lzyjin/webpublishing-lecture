@@ -1,0 +1,22 @@
+.items {
+  width: 900px;
+  display: flex;
+  gap: 40px;
+}
+
+.items .item {
+  flex: 1;
+  border-radius: 10px;
+  height: 400px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.items .item:hover {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-15px);
+}
+
+.items .item img {
+  height: 400px;
+}

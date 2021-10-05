@@ -1,0 +1,33 @@
+.vision {
+  display: flex;
+  &-inner {
+    width: 1200px;
+    overflow: hidden;
+  }
+  &-content {
+    // border: 1px solid red;
+    overflow: hidden;
+    &>div {
+      // border: 1px solid blue;
+      float: left;
+    }
+  }
+  &-item {
+    width: 100%;
+    &>div {
+      height: 400px;
+    }
+    &-desc {
+      background-color: #f9f9f9;
+      h1 {
+        text-align: center;
+      }
+    }
+    &-photo {
+      width: 100%;
+      img {
+        height: inherit;
+      }
+    }
+  }
+}

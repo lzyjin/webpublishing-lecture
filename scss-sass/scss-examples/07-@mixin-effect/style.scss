@@ -1,0 +1,23 @@
+@mixin shadow-item {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.items {
+  width: 900px;
+  display: flex;
+  gap: 40px;
+  .item {
+    flex: 1;
+    border-radius: 10px;
+    height: 400px;
+    transition: 0.5s;
+    overflow: hidden;
+    &:hover {
+      @include shadow-item;
+      transform: translateY(-15px);
+    }
+    img {
+      height: 400px;
+    }
+  }
+}
