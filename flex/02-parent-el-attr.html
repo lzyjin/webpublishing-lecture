@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부모요소에 사용하는 flex 속성</title>
+</head>
+
+<body>
+  <h1>부모요소에 사용하는 flex 속성</h1>
+  <hr>
+  <h2>justify-content: center | flex-start | flex-end</h2>
+  <p>자식요소들의 좌측, 중앙, 우측 등 수평배치를 변경한다</p>
+  <div class="parent">
+    <div class="child">child</div>
+  </div>
+  <style>
+    .parent {
+      border: 5px solid green;
+      height: 300px;
+      /* flex를 시작할 때 무조건 사용해야하는 속성 */
+      display: flex;
+      /* justify-content: flex-start; */
+      /* justify-content: center; */
+      justify-content: flex-end;
+    }
+    .parent div {
+      width: 300px;
+      color: #fff;
+      background-color: crimson;
+      text-align: center;
+      font-size: 40px;
+      margin: 5px;
+    }
+    .child {
+      /* 높이값이 없는 경우 부모요소의 높이값에 맞춰 100%로 채워지도록 */
+      height: 100%;
+    }
+  </style>
+  <hr>
+  <h2>justify-content: center</h2>
+  <p>여러 개의 자식요소가 좌우 간격 없이 수평 중앙 정렬</p>
+  <div class="jcc">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+  <style>
+    .jcc {
+      border: 5px solid green;
+      height: 300px;
+      display: flex;
+      /* 여러 개의 자식요소가 좌우 간격 없이 수평 중앙 정렬 */
+      justify-content: center;
+    }
+    .jcc div {
+      width: 300px;
+      color: #fff;
+      background-color: crimson;
+      text-align: center;
+      font-size: 40px;
+      margin: 5px;
+    }
+    .jcc .child1 {
+      height: 100px;
+    }
+    .jcc .child2 {
+      /* 자식요소가 높이값이 지정되지않는 경우 자동으로 높이 100% */
+    }
+    .jcc .child3 {
+      height: 200px;
+    }
+  </style>
+  <hr>
+  <h2>justify-content: space-around</h2>
+  <p>여러개의 자식요소끼리 좌우 간격을 일정하게 배분해서 수평 중앙에 정렬</p>
+  <div class="jcsa">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+  <style>
+    .jcsa {
+      border: 5px solid green;
+      height: 300px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .jcsa div {
+      width: 300px;
+      color: #fff;
+      background-color: crimson;
+      text-align: center;
+      font-size: 40px;
+      margin: 5px;
+    }
+    .jcsa .child1 {
+      height: 100px;
+    }
+    .jcsa .child2 {
+      /* 자식요소가 높이값이 지정되지않는 경우 자동으로 높이 100% */
+    }
+    .jcsa .child3 {
+      height: 200px;
+    }
+  </style>
+  <hr>
+  <h2>justify-content: space-between</h2>
+  <p>여러개의 자식요소를 부모요소의 (맨끝)좌우 여백 없이 꽉 채우면서 중앙에 배치</p>
+  <div class="jcsb">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+  <style>
+    .jcsb {
+      border: 5px solid green;
+      height: 300px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .jcsb div {
+      width: 300px;
+      color: #fff;
+      background-color: crimson;
+      text-align: center;
+      font-size: 40px;
+      margin: 5px;
+    }
+    .jcsb .child1 {
+      height: 100px;
+    }
+    .jcsb .child2 {
+      /* 자식요소가 높이값이 지정되지않는 경우 자동으로 높이 100% */
+    }
+    .jcsb .child3 {
+      height: 200px;
+    }
+  </style>
+</body>
+
+</html>

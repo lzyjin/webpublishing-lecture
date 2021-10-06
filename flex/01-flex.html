@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. flexbox의 개념과 사용하는 이유</title>
+</head>
+<body>
+  <h1>01. flexbox의 개념과 사용하는 이유</h1>
+  <p>
+    flex는 기존의 float, position, display 속성을 사용해서 html 요소의 배치, 정렬, 방향, 순서, 크기를 조절하는 대신에 좀 더 쉽고 효율적으로 조절할 수 있는 방법을 지원하는 css3 레이아웃 제작 방식이다. 특히 반응형 레이아웃을 만들기 쉽다.
+  </p>
+  <p>
+    주의! <br>
+    flex는 IE와 Edge 브라우저에서 부분적으로만 지원하므로 사용하기 전에 신중하게 고려해야한다.
+  </p>
+  <h2>부모요소와 자식요소에 정의하는 flexbox 속성 정리</h2>
+  <ul>
+    부모요소에 쓰는 속성
+    <li>display : flex | inline-flex</li>
+    <li>justify-content : flex-start | flex-end | center | space-between | space-around</li>
+    <li>align-items : flex-start | flex-end | center | baseline | stretch</li>
+    <li>flex-direction : row | column</li>
+    <li>flex-wrap : wrap | nowrap | wrap-reverse</li>
+    <li>align-content : flex-start | flex-end | center | space-between | space-around | stretch</li>
+  </ul>
+  <ul>
+    자식 요소에 쓰는 속성
+    <li>flex: 숫자(정수)</li>
+    <li>order: 숫자(정수)</li>
+    <li>align-self: auto | flex-start | center | baseline | stretch</li>
+  </ul>
+  <hr>
+  <div class="container"><div>div</div></div>
+  <style>
+    /* 기존 방식으로 수직중앙 수평중앙 배치하기 */
+    /* .container {
+      background-color: pink;
+      height: 100vh;
+      width: 100%;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } */
+
+    /* flex 방식으로 수직중앙 수평중앙 배치하기 */
+    .container {
+      background-color: pink;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+    }
+  </style>
+</body>
+</html>
