@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자식요소에 사용하는 flex 속성</title>
+</head>
+<body>
+  <a href="https://heropy.blog/2018/11/24/css-flexible-box/" target="_blank">설명 잘 되어있는 블로그</a>
+  <h3>자식요소에 사용하는 flex 속성</h3>
+  <hr>
+  <h1>자식요소의 증가 너비 비율을 설정 flex-grow: 숫자(정수)</h1>
+  <p>예를들어 자식요소 3개에 flex-grow를 각각 1, 2, 1이라면 너비가 비율에 따라 25%(1/4), 50%(1/2), 25%(1/4)가 배정된다.</p>
+  <p>기본값 flex-grow: 0</p>
+  <div class="parent">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent {
+      border: 5px solid #000;
+      display: flex;
+    }
+    .parent div {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      font-size: 20px;
+      background-color: gold;
+      margin: 5px;
+    }
+    .parent .child1 {
+      flex-grow: 1;
+    }
+    .parent .child2 {
+      flex-grow: 2;
+    }
+    .parent .child3 {
+      flex-grow: 1;
+    }
+  </style>
+  <br><hr><br>
+  <h1>flex-shrink: 숫자(정수)</h1>
+  <p>플렉스 자식요소의 감소 너비 비율을 설정</p>
+  <p>기본값 flex-shrink: 1</p>
+  <div class="parent2">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent2 {
+      border: 5px solid #000;
+      display: flex;
+    }
+    .parent2 div {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      font-size: 20px;
+      background-color: tomato;
+      margin: 5px;
+    }
+    .parent2 .child1 {
+      flex-shrink: 3;
+    }
+    .parent2 .child2 {
+      flex-shrink: 2;
+    }
+    .parent2 .child3 {
+      flex-shrink: 1;
+    }
+  </style>
+  <br><hr><br>
+  <h1>flex-basis: 숫자(정수)</h1>
+  <p>플렉스 자식요소의 공간 배분 전 기본 너비 설정</p>
+  <p>기본값 flex-basis: auto</p>
+  <div class="parent3">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent3 {
+      border: 5px solid #000;
+      display: flex;
+    }
+    .parent3 div {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      font-size: 20px;
+      background-color: tomato;
+      margin: 5px;
+      flex-grow: 1;
+    }
+    .parent3 .child1 {
+      flex-basis: 100px;
+    }
+    .parent3 .child2 {
+      flex-basis: 200px;
+    }
+    .parent3 .child3 {
+      flex-basis: 300px;
+    }
+  </style>
+  <br><hr><br>
+  <h1>자식요소의 너비(증가, 감소, 기본)을 설정하는 단축 속성 flex: [증가너비] [감소너비] [기본너비]</h1>
+  <pre>
+    .child {
+      flex: 1 1 50px; 증갑너비 감소너비 기본너비
+      flex: 1 1;      증가너비 감소너비
+      flex: 1 50px;   증가너비 기본너비
+    }
+  </pre>
+  <ul>
+    <li>flex 단축속성에서 flex-grow 를 제외하고는 모두 생략 가능하다</li>
+    <li>flex: 1; == flex-grow: 1;</li>
+    <li>flex: 1;  == flex: 1 1; == flex: 1 1 0;</li>
+  </ul>
+  <h1>flex: 숫자(정수)</h1>
+  <p>플렉스 자식요소의 너비를 상대적으로 설정</p>
+  <p>자식요소너비가 부모요소너비의 숫자/자식요소의개수 가 된다</p>
+  <p>자식요소중 flex속성을 갖지 않으면 명시한 width값이 적용된다. <br> 나머지 flex속성을 갖는 자식요소들은 flex속성 없는 요소를 제외한 너비에서 비율을 차지한다</p>
+  <div class="parent4">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent4 {
+      border: 5px solid #000;
+      display: flex;
+    }
+    .parent4 div {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      font-size: 20px;
+      background-color: tomato;
+      margin: 5px;
+    }
+    .parent4 .child1 {
+      /* flex: 1; */
+    }
+    .parent4 .child2 {
+      flex: 1;
+      /* flex: 4; */
+    }
+    .parent4 .child3 {
+      flex: 1;
+    }
+  </style>
+  <br><hr><br>
+  <h1>자식요소의 순서를 설정하는 order: 숫자(정수)</h1>
+  <p>기본값 order: 0;</p>
+  <p>양수, 0 , 음수 허용</p>
+  <div class="parent5">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent5 {
+      border: 5px solid #000;
+      display: flex;
+    }
+    .parent5 div {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      font-size: 20px;
+      background-color: tomato;
+      margin: 5px;
+      color: #fff;
+    }
+    .parent5 .child1 {
+      flex: 1;
+      background-color: purple;
+      order: 1;
+    }
+    .parent5 .child2 {
+      flex: 1;
+      background-color: palevioletred;
+      order: 2;
+    }
+    .parent5 .child3 {
+      flex: 1;
+      background-color: pink;
+      /* order속성이 없으면 기본값이 0이라서 첫번째 순서로 배치된다 */
+    }
+  </style>
+  <br><hr><br>
+  <h1>자식요소들의 정렬 방법(수직배치) align-self: auto(부모의 align-items 속성 상속) | flex-start | flex-end | center | baseline | stretch</h1>
+  <p>부모요소의 align-items 속성보다 우선한다</p>
+  <div class="parent6">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent6 {
+      border: 5px solid #000;
+      height: 500px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .parent6 div {
+      width: 300px;
+      text-align: center;
+      font-size: 20px;
+      background-color: tomato;
+      margin: 5px;
+      color: #fff;
+    }
+    .parent6 .child1 {
+      height: 100px;
+      align-self: flex-end;
+    }
+    .parent6 .child2 {
+      height: 300px;
+      /* 부모요소의 align-items속성값인 flex-start가 적용된다 */
+    }
+    .parent6 .child3 {
+      height: 150px;
+      align-self: center;
+    }
+  </style>
+  <br><hr><br>
+  <h1>자식요소에 마진 적용하기 margin: auto; | margin-right: auto; | margin-left: auto;</h1>
+  <p>margin 속성을 auto로 설정해서 타 요소를 반대방향으로 밀어내 왼쪽 끝 또는 오른쪽 끝에 배치</p>
+  <div class="parent7">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <style>
+    .parent7 {
+      border: 5px solid #000;
+      display: flex;
+    }
+    .parent7 div {
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      font-size: 20px;
+      background-color: burlywood;
+      margin: 5px;
+    }
+    .parent7 .child1 {
+      /* margin-right: auto; */
+    }
+    .parent7 .child2 {
+      /* margin-right: auto; */
+    }
+    .parent7 .child3 {
+      /* margin-left: auto; */
+    }
+    .parent7 .child1,
+    .parent7 .child2,
+    .parent7 .child3 {
+      /* margin: auto; */
+    }
+    .parent7 .child2 {
+      margin: auto;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부모요소 속성</title>
+</head>
+<body>
+  <h3>grid 부모요소 속성</h3>
+  <ul>
+    <li>column 과 row : column은 세로(열), row는 가로(행)</li>
+    <li>template : 부모요소에 사용. <br> 
+      gird 레이아웃의 시작은 display: grid; 라는 속성과 값. <br> 
+      두번째는 grid-template-column으로 세로를 몇개로 나눌지 결정</li>
+  </ul> 
+  <h1>1) 부모요소에 사용하는 grid 속성 : display: grid; display: inline-grid;</h1>
+  <p>그리드 부모요소를 정의 (해당 선택자에 그리드를 적용한다)</p>
+  <p>flex의 경우 display:flex;만으로도 자식요소가 가로로 배치된다. 왜냐하면 flex-direction:row를 기본값으로 갖기 때문이다. <br> 하지만 grid는 display:grid만으로는 어떤 변화도 줄 수 없다.</p>
+  <p>display: inline-grid;는 자식요소의 내용에 맞게 너비가 줄어든다. display:inline-flex;와 동일하다. </p>
+  <div class="parent1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <div class="parent1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <style>
+    .parent1 {
+      border: 5px solid #000;
+      display: grid;
+      /* display: inline-grid; */
+    }
+    .parent1 div {
+      background-color: dodgerblue;
+      border: 1px solid #fff;
+      color: #fff;
+      text-align: center;
+    }
+    .parent1:nth-of-type(2) {
+      display: inline-grid;
+    }
+  </style>
+  <h1>2-1) 부모요소에 사용하는 grid 속성 : grid-template-columns: auto | 단위</h1>
+  <p></p>
+</body>
+</html>
