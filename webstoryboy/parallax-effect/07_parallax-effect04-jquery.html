@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Parallax Effect 02 - 닷메뉴 - javascript</title>
+    <title>Parallax Effect 04 - 숨김메뉴2 - jquery</title>
     <!-- 폰트가 가장 위에와야함-->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <style>
@@ -46,47 +46,36 @@
             margin-bottom: 8px;
         }
 
-        /* paraDot */
-        .paraDot {
+        /* nav */
+        .paraNav {
             position: fixed;
-            right: 20px;
-            top: 50%;
+            right: 20px; top: 20px;
             z-index: 1000;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
+            background: rgba(0,0,0,.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+            transition: top 0.4s ease;
         }
-        .paraDot li {
+        .paraNav.hide {
+            top: -100px;
+        }
+        .paraNav li {
+            display: inline-block;
             list-style: none;
         }
-        .paraDot li a {
-            width: 20px;
-            height: 20px;
-            display: block;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            margin: 8px;
-            position: relative;
+        .paraNav li a {
+            color: #fff;
             text-decoration: none;
+            display: inline-block;
+            padding: 5px 20px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
         }
-        .paraDot li a span {
-            position: absolute;
-            left: -105px;
-            top: 50%;
-            transform: translateY(-50%);
+        .paraNav li.active a {
             background: #fff;
             color: #000;
-            display: block;
-            padding: 2px 15px;
-            border-radius: 30px;
-            opacity: 0;
-        }
-        .paraDot li.active a {
-            background: #fff;
-        }
-        .paraDot li.active a span {
-            opacity: 1;
         }
 
         /* info */
@@ -235,36 +224,23 @@
 </head>
 <body class="parallax">
     <div class="paraScroll">scrollTop() : <span>0</span>px</div>
-    <div class="paraInfo">
-        <ul>
-            <li>#section1 offset() : <span class="offset1">0</span>px</li>
-            <li>#section2 offset() : <span class="offset2">0</span>px</li>
-            <li>#section3 offset() : <span class="offset3">0</span>px</li>
-            <li>#section4 offset() : <span class="offset4">0</span>px</li>
-            <li>#section5 offset() : <span class="offset5">0</span>px</li>
-            <li>#section6 offset() : <span class="offset6">0</span>px</li>
-            <li>#section7 offset() : <span class="offset7">0</span>px</li>
-            <li>#section8 offset() : <span class="offset8">0</span>px</li>
-            <li>#section9 offset() : <span class="offset9">0</span>px</li>
-        </ul>
-    </div>
 
     <header id="paraHeader">
-        <h1>Parallax Effect 02 - jQuery</h1>
-        <p>패럴렉스 스크롤링 효과 - 닷메뉴</p>
+        <h1>Parallax Effect 03 - jQuery</h1>
+        <p>패럴렉스 스크롤링 효과 - 숨김메뉴</p>
     </header>
 
-    <nav class="paraDot">
+    <nav class="paraNav">
         <ul>
-            <li class="active"><a href="#section1"><span>section1</span></a></li>
-            <li><a href="#section2"><span>section2</span></a></li>
-            <li><a href="#section3"><span>section3</span></a></li>
-            <li><a href="#section4"><span>section4</span></a></li>
-            <li><a href="#section5"><span>section5</span></a></li>
-            <li><a href="#section6"><span>section6</span></a></li>
-            <li><a href="#section7"><span>section7</span></a></li>
-            <li><a href="#section8"><span>section8</span></a></li>
-            <li><a href="#section9"><span>section9</span></a></li>
+            <li class="active"><a href="#section1">메뉴1</a></li>
+            <li><a href="#section2">메뉴2</a></li>
+            <li><a href="#section3">메뉴3</a></li>
+            <li><a href="#section4">메뉴4</a></li>
+            <li><a href="#section5">메뉴5</a></li>
+            <li><a href="#section6">메뉴6</a></li>
+            <li><a href="#section7">메뉴7</a></li>
+            <li><a href="#section8">메뉴8</a></li>
+            <li><a href="#section9">메뉴9</a></li>
         </ul>
     </nav>
 
@@ -357,7 +333,7 @@
                 <li>
                     <a href="#">3</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#">4</a>
                 </li>
                 <li>
@@ -380,7 +356,7 @@
                 <li>
                     <a href="#">1</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#">2</a>
                 </li>
                 <li>
@@ -405,54 +381,92 @@
         </div>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
     <script>
-        // 버튼 클릭해서 스크롤 이동하기
-        const buttons = document.querySelectorAll('.paraDot ul li');
-        buttons.forEach((v, i, arr) => {
-            v.addEventListener('click', function(e) {
-                e.preventDefault();
+        // 메뉴 클릭 시 해당 섹션으로 이동
+        $('.paraNav ul li').click(function (e) {
+            e.preventDefault();
 
-                const section = document.querySelector(`.content__item:nth-of-type(${i+1})`);
-                const href = v.querySelector('a').getAttribute('href');
-
-                document.querySelector(href).scrollIntoView({
-                    behavior: 'smooth',
-                });
-
-            });
+            const target = $(this);
+            const index = target.index();
+            const section = $('.content__item').eq(index);
+            const offset = section.offset().top;
+            $('html, body').animate({
+                scrollTop: offset
+            }, 600, 'easeInOutCirc'); // 'easeInOutCirc'은 jqueryUi를 넣어야만 쓸 수 있음. 사이트의 퀄리티는 애니메이션 움직임이 좌우.
         });
 
-        // 스크롤할 때 버튼 active
-        window.addEventListener('scroll', function(e) {
-            const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        /*
+        $(window).scroll(function () {
+            const scrollTop = $(window).scrollTop();
+            let lastScrollTop = 0;
 
-            // info
-            document.querySelector('.paraScroll span').innerText = parseInt( scrollTop );
-            for(let i = 0; i < 9; i++) {
-                const infoList = document.querySelectorAll('.paraInfo ul li');
-                infoList.forEach((v, i, arr) => {
-                    v.querySelector('span').innerText = parseInt( document.getElementById(`section${i+1}`).offsetTop );
-                });
+            // ❕ 스크롤 방향에 따라 메뉴 노출/미노출
+            if(scrollTop > lastScrollTop) {
+                $('.paraNav').addClass('hide');
+            } else {
+                $('.paraNav').removeClass('hide');
             }
 
-            // button active
-            for(let i = 0; i < 9; i++) {
-                if( scrollTop >= document.querySelector(`.content__item:nth-of-type(${i+1})`).offsetTop ) {
-                    // 이 코드가 if문 바깥(위쪽)에 있으면 정상적으로 작동안함
-                    buttons.forEach((v, i, arr) => {
-                        v.classList.remove('active');
-                    });
-                    document.querySelector(`.paraDot ul li:nth-of-type(${i+1})`).classList.add('active');
+            // 시도 1
+            // lastScrollTop = scrollTop; // 바로바로 대입되어서 두 값이 동일해져 버림 -> 시간차 두고 대입해야 가능할 듯!
+
+            // 시도 2
+            // setTimeout(function() {
+            //     lastScrollTop = scrollTop;
+            // }, 1000)
+
+            console.log(scrollTop, lastScrollTop);
+        });
+        */
+
+        // ❕ 시도 3
+        let nowScrollTop;
+        let lastScrollTop = 0;
+        $(window).scroll(function () {
+
+            nowScrollTop = true;
+
+            // 1초의 시간차를 만들어 lastScrollTop에  1초전의 scrollTop을 대입
+            // 즉, 1초 전의 scrollTop이 현재의 lastScrollTop이 된다.
+            // 그래서 조금이라도 차이가 나게 되어있다.
+            // 그 차이값으로 방금전보다 스크롤을 아래로 했는지 위로 했는지 알 수 있다.
+            // setInterval(function () {
+            setTimeout(function () {
+                if(nowScrollTop) {
+                    nowScrollTop = false;
+                    hasScroll();
                 }
+            }, 1000);
+        });
+
+        function hasScroll() {
+            let scrollTop = $(window).scrollTop();
+
+            // console.log(scrollTop, lastScrollTop);
+
+            if(scrollTop > lastScrollTop) { // 스크롤을 아래로 했을 때 메뉴 숨김
+                $('.paraNav').addClass('hide');
+                console.log('down / ', '지금스크롤: '+ scrollTop, '라스트스크롤: ' + lastScrollTop);
+            } else {
+                console.log('up / ', '지금스크롤: '+ scrollTop, '라스트스크롤: ' + lastScrollTop);
+                $('.paraNav').removeClass('hide');
             }
 
-            // buttons.forEach((v, i, arr) => {
-            //     v.classList.remove('active');
-            //     if( scrollTop >= document.querySelector(`.content__item:nth-of-type(${i+1})`).offsetTop - 2 ) {
-            //         v.classList.add('active');
-            //     }
-            // });
-        });
+            lastScrollTop = scrollTop;
+
+            // 출력용
+            $('.paraScroll span').text(parseInt(scrollTop));
+
+            // 스크롤 시 해당 위치에 맞는 메뉴 active
+            $('.content__item').each(function(i, v) {
+                if(scrollTop >= $('.content__item').eq(i).offset().top - 2) {
+                    $('.paraNav ul li').eq(i).addClass('active').siblings().removeClass('active');
+                }
+            });
+
+        }
     </script>
 </body>
 </html>
