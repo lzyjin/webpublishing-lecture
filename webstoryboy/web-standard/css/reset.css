@@ -83,7 +83,8 @@ h6 {
 
 /* 테두리 초기화 */
 img,
-fieldset {
+fieldset,
+button {
     border: none;
 }
 
