@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - 반응형 레이아웃 3</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f3e5f5; color: #fff; }
+        #wrap { width: 1200px; margin: 0 auto; text-align: center; }
+        header { width: 100%; height: 100px; background: #81d4fa; }
+        aside { float: left; width: 30%; height: 900px; background: #4fc3f7; }
+        section { float: left; width: 70%; height: 300px; }
+        section.section1 { background: #29b6f6; }
+        section.section2 { background: #03a9f4; }
+        section.section3 { background: #039be5; }
+        footer { clear: both; width: 100%; height: 100px; background: #0288d1; }
+
+        /* 화면 너비: 0 ~ 1200px */
+        @media screen and (max-width: 1200px) {
+            #wrap { width: 100%; }
+            header { height: 150px; }
+            section.section1 { height: 450px; }
+            section.section2 { height: 450px; }
+            section.section3 { float: none; clear: both; width: 100%; }
+        }
+        /* 화면 너비: 0 ~ 768px */
+        @media screen and (max-width: 768px) {
+            aside { float: none; clear: both; width: 100%; height: 200px; }
+            section.section1 { width: 50%; height: 300px; }
+            section.section2 { width: 50%; height: 300px; }
+        }
+        /* 화면 너비: 0 ~ 480px */
+        @media screen and (max-width: 480px) {
+            section.section1 { width: 100%; }
+            section.section2 { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <aside>aside</aside>
+        <section class="section1">contents1</section>
+        <section class="section2">contents2</section>
+        <section class="section3">contents3</section>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

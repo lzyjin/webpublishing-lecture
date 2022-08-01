@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - 반응형 레이아웃 5</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #e3f2fd; color: #fff; }
+        #wrap { width: 1200px; margin: 0 auto; text-align: center; }
+        header { width: 100%; height: 100px; background: #b2defe; }
+        nav { width: 100%; height: 300px; background: #7ecbfd; }
+        aside { float: left; width: 30%; height: 600px; background: #43b5fc; }
+        section.section1 { float: left; width: 70%; height: 200px; background: #00a5fb; }
+        section.section2 { float: left; width: 70%; height: 200px; background: #0096fa; }
+        section.section3 { float: left; width: 70%; height: 200px; background: #007dfa; }
+        article { float: left; width: 33.3333333%; height: 300px; }
+        article.article1 { background: #0088ec; }
+        article.article2 { background: #0076d9; }
+        article.article3 { background: #0064c6; }
+        section.section4 { clear: both; background: #00a6fc; padding: 5% 10%; }
+        section.section4::after { content: ''; clear: both; display: block; }
+        section.section4 div { float: left; width: calc(25% - 2%); height: 170px; border-radius: 5px; background: #0076d9; margin: 1%; }
+        footer { clear: both; width: 100%; height: 100px; background: #43b5fc; }
+
+        /* 화면 너비: 0 ~ 1200px */
+        @media screen and (max-width: 1200px) {
+            #wrap { width: 100%; }
+            section.section1 { height: 300px; }
+            section.section2 { height: 300px; }
+            section.section3 { display: none; }
+            article { width: 50%; }
+            article.article3 { display: none;}
+            section.section4 div { width: calc(33.3333333% - 2%); }
+            section.section4 div:last-child { display: none; }
+        }
+        /* 화면 너비: 0 ~ 768px */
+        @media screen and (max-width: 768px) {
+            article.article1 { width: 100%; float: none; clear: both; }
+            article.article2 { width: 100%; float: none; clear: both; }
+        }
+        /* 화면 너비: 0 ~ 480px */
+        @media screen and (max-width: 480px) {
+            aside { width: 100%; height: 200px; float: none; clear: both; }
+            section.section1 { width: 100%; float: none; clear: both; }
+            section.section2 { width: 100%; float: none; clear: both; }
+            section.section4 div { width: 100%; float: none; clear: both; margin: 2%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <nav>nav</nav>
+        <aside>aside</aside>
+        <section class="section1">section1</section>
+        <section class="section2">section2</section>
+        <section class="section3">section3</section>
+        <article class="article1">article1</article>
+        <article class="article2">article2</article>
+        <article class="article3">article3</article>
+        <section class="section4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
