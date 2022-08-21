@@ -73,7 +73,7 @@ a {
 }
 .heading p {
   /* 1em : body서식의 기본 텍스트 사이즈 */
-  /* font-size: 1.2em; */
+  /* fonts-size: 1.2em; */
 }
 .btn-book,
 .btn-learn {
@@ -191,7 +191,7 @@ a {
 
 .modal-gnb {
   /* div는 기본 width가 100%니까 생략
-  but)  position: absolute; 하면 inline-block이 되므로 
+  but)  position: absolute; 하면 inline-block이 되므로
   다시 명시해줘야함 */
   position: absolute;
   top: 0;

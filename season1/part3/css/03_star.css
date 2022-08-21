@@ -9,8 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-    
-/*  body에 font-size가 없으면 기본으로 16px */
+
+/*  body에 fonts-size가 없으면 기본으로 16px */
 }
 
 a {

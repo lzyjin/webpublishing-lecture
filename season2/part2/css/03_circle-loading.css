@@ -24,7 +24,7 @@ body {
   position: relative;
 }
 .loading span {
-  /* font-size는 10px이 제일 작은 값 */
+  /* fonts-size는 10px이 제일 작은 값 */
   /* 더 작게 하고 싶으면 transform: scale 이용 */
   font-size: 10px;
   font-weight: 500;

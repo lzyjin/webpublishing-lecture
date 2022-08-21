@@ -61,7 +61,7 @@ a {
 }
 .heading p {
   /* 1em : body서식의 기본 텍스트 사이즈 */
-  /* font-size: 1.2em; */
+  /* fonts-size: 1.2em; */
 }
 .btn-book,
 .btn-learn {

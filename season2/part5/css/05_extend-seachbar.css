@@ -1,7 +1,7 @@
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* body 태그에 font-family로 적용시키면 input요소에는 적용되지 않으므로 전체선택자를 사용함  */
+/* body 태그에 fonts-family로 적용시키면 input요소에는 적용되지 않으므로 전체선택자를 사용함  */
 * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
@@ -27,7 +27,7 @@ header {
   /* position: absolute, fixed는 inline-block요소가 된다 */
   position: fixed;
   width: 100%;
-  
+
   background-color: rgb(191, 175, 175);
   display: flex;
   justify-content: space-between;

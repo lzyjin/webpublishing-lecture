@@ -3,11 +3,11 @@
 
 * {
   box-sizing: border-box;
-  /* form태그에는 body에 적용한 font-family가 적용되지 않으므로 */
+  /* form태그에는 body에 적용한 fonts-family가 적용되지 않으므로 */
   font-family: 'Roboto', sans-serif;
 }
 body {
-  /* font-family: 'Roboto', sans-serif; */
+  /* fonts-family: 'Roboto', sans-serif; */
   margin: 0;
   background: url(/season2/part3/images/background.png) no-repeat center center;
   background-size: cover;
