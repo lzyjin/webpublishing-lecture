@@ -4,7 +4,8 @@
 #mNav { display: none; position: absolute; right: 24px; top: 13px; }
 #header { width: 100%; background: #fff; border-bottom: 1px solid #c6c6c6; }
 #banner { position: relative; }
-#movie {  }
+#movie { background: #f8f8f8; }
+#event {  }
 
 /*가운데 영역*/
 .container { position: relative; width: 1280px; margin: 0 auto; }
@@ -99,8 +100,20 @@
 .movie .movie_chart .chart_cont_item h3 span.rating-19 { background-position: -29px -125px; }
 .movie .movie_chart .chart_cont_item .info h3 strong { display: inline-block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 85%; }
 .movie .movie_chart .chart_cont_item .info .info_btn { }
-.movie .movie_chart .chart_cont_item .info .info_btn a { display: inline-block; width: 49%; background: #f2f2f2; font-size: 18px; padding: 15px 30px; }
+.movie .movie_chart .chart_cont_item .info .info_btn a { display: inline-block; width: 49%; background: #f2f2f2; font-size: 18px; padding: 15px 0; text-align: center; }
 
+/* 이벤트 */
+.event { padding: 100px 0; }
+.event h2 { font-size: 30px; font-weight: 500; margin-bottom: 20px; }
+.event .event_left { float: left; width: 66%; margin-right: 2%; }
+.event .event_left .event_slider {}
+.event .event_left .event_slider img { display: block; }
+.event .event_left .event_box { float: left; width: 50%; }
+.event .event_left .event_box img { display: block; }
+.event .event_left .event_box.event_box1 {}
+.event .event_left .event_box.event_box2 {}
+.event .event_right { float: left; width: 32%; }
+.event .event_right img { display: block; }
 
 
 
@@ -154,6 +167,7 @@
 
     .header h1 { text-align: left; }
 
+    #movie { background: none; }
     #movie .row { background: #fff; margin: 24px; padding: 24px; }
     #movie h2.ir_so { position: static; width: auto; height: auto; line-height: normal; text-indent: 0; font-size: 24px; font-weight: bold; padding-bottom: 20px; }
     .movie { padding: 0; }
@@ -165,6 +179,12 @@
     .movie .movie_title ul li.active a { background: none; color: #666; }
     .movie .movie_title ul li.active a::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 100%; height: 2px; background: #666; z-index: 2; }
     .movie .movie_chart .chart_cont_item .info .info_btn a { padding: 15px 0; text-align: center; }
+
+    #event .row { padding: 0 24px 24px 24px; }
+    .event { padding: 24px; background: #fff; }
+    .event h2 { font-size: 24px; font-weight: 700; }
+    .event .event_left { width: 100%; margin-right: 0; }
+    .event .event_right { display: none; }
 }
 
 @media screen and (max-width: 600px) {
@@ -197,6 +217,10 @@
     .movie .movie_chart .chart_cont_item .info h3 strong { display: block; font-size: 19px; color: #222; width: 100%; }
     .movie .movie_chart .chart_cont_item .info .info_btn a { width: 52%; margin-left: auto; display: block; margin-right: auto; padding: 5px; margin-bottom: 5px; background: none; border: 1px solid #ddd; font-size: 14px; }
     .movie .movie_chart .chart_cont_item .info .info_btn a:nth-of-type(2) { display: none; }
+
+    #event .row { padding: 0 8px 8px 8px; }
+    .event { padding: 16px; }
+    .event h2 { font-size: 18px; margin-bottom: 10px; }
 }
 
 @media screen and (max-width: 480px) {
