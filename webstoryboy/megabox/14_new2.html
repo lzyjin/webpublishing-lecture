@@ -7,7 +7,7 @@
     <meta name="author" content="kimyejin">
     <meta name="description" content="메가박스 사이트를 따라하면서 배우는 튜토리얼입니다.">
     <meta name="keywords" content="메가박스, 영화, 사이트 만들기, 이미지 슬라이드, 반응형">
-    <title>13 - 새로운 영화</title>
+    <title>14 - 새로운 영화2</title>
 
     <!-- 페이스북 메타 태그 -->
     <meta property="og:title" content="메가박스 사이트 만들기" />
@@ -30,7 +30,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/13_style.css">
+    <link rel="stylesheet" href="css/14_style.css">
     <link rel="stylesheet" href="css/font-awesome-4.7.0.css">
 
     <!-- 파비콘 -->
@@ -889,30 +889,31 @@
                         <p class="date">2023년 10월 28일 개봉</p>
                         <div>
                             <div class="stars">
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
+                                <div class="star full icon"></div>
+                                <div class="star full icon"></div>
+                                <div class="star full icon"></div>
+                                <div class="star half icon"></div>
+                                <div class="star empty icon"></div>
                             </div>
                             <div class="rating">7.5/10</div>
                         </div>
-                        <p class="genre">액션 미국, 오스트레일리아</p>
-                        <p class="level">142분 12세이상관람가</p>
-                        <p class="story">단숨에 행성 하나를 파괴할 위력을 지닌 데스 스타가 완성되기 전에 설계도를 훔쳐내야 하는 이번 작전의 성공
+                        <p class="genre">액션 <span class="bar"></span> 미국, 오스트레일리아</p>
+                        <p class="level">142분 <span class="bar"></span> 12세이상관람가</p>
+                        <p class="story">
+                            단숨에 행성 하나를 파괴할 위력을 지닌 데스 스타가 완성되기 전에 설계도를 훔쳐내야 하는 이번 작전의 성공
                             확률은 고작 2.4%. 생사도 모르는 아버지에 얽힌 비밀을 밝히려는 진을 비롯해 유능한 정보 요원 '카시안'(디에고 루나),
                             두 눈이 멀었지만 탁월한 무술 실력을 지닌 ‘치루트’(견자단), 전투 베테랑 ‘베이즈’, 파일럿 ‘보디’, 시니컬한 드로이드
                             ‘K-2SO’까지 합류, 거대한 전쟁을 끝낼 ‘로그 원’이 이끄는 가장 비밀스런 작전이 시작되는데…
                         </p>
                         <form action="">
                             <div>
-                                <select name="" id="">
+                                <select name="" id="" class="ui_select2">
                                     <option value="">2022년 10월 20일</option>
                                     <option value="">2022년 10월 21일</option>
                                     <option value="">2022년 10월 22일</option>
                                     <option value="">2022년 10월 23일</option>
                                 </select>
-                                <select name="" id="">
+                                <select name="" id="" class="ui_select2">
                                     <option value="">오전 0:00</option>
                                     <option value="">오전 8:50</option>
                                     <option value="">오전 10:00</option>
@@ -921,7 +922,7 @@
                                 </select>
                             </div>
                             <div>
-                                <input type="text" name="" id="" placeholder="주소를 입력해 주세요.">
+                                <input type="text" name="" id="" class="ui_input3" placeholder="주소를 입력해 주세요.">
                             </div>
                             <div>
                                 <button>좌석확인</button>

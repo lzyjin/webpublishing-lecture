@@ -8,6 +8,7 @@
 #event {  }
 #opening { margin: 17px 0; background: url('../images/bg01.jpg') no-repeat center top / cover; }
 #new {  }
+#help {  }
 
 /*가운데 영역*/
 .container { position: relative; width: 1280px; margin: 0 auto; }
@@ -137,7 +138,44 @@
 .new .new_left .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; z-index: 1; }
 .new .new_left .play .st0 { fill: rgba(255, 255, 255, 0.45); }
 .new .new_left .play .st1 { fill: #fff; }
-.new .new_right { float: left; width: 400px; height: 500px; background: #f0f0f0; padding: 40px; }
+.new .new_right { float: left; width: 400px; height: 500px; background: #f0f0f0; padding: 34px; }
+.new .new_right .movie_title { font-size: 28px; }
+.new .new_right .date { font-size: 15px; margin-bottom: 15px; }
+.new .new_right .stars { display: inline-block; margin-bottom: 10px; margin-right: 7px; }
+.new .new_right .stars .star { width: 20px; height: 20px; display: inline-block; }
+.new .new_right .stars .star.full { background-position: -393px 0; }
+.new .new_right .stars .star.half { background-position: -412px 0; }
+.new .new_right .stars .star.empty { background-position: -374px 0; }
+.new .new_right .rating { display: inline-block; font-size: 18px; font-weight: 700; transform: translateY(-3px); }
+.new .new_right .genre { margin-bottom: 3px; font-size: 14px; }
+.new .new_right .level { margin-bottom: 10px; font-size: 14px; }
+.new .new_right .bar { display: inline-block; width: 1px; height: 13px; background: #444; margin: 0 5px; }
+.new .new_right .story { font-size: 14px; overflow: hidden; text-overflow: ellipsis; display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; }
+.new .new_right form { margin-top: 20px; }
+.new .new_right form>div { display: flex; gap: 7px; }
+.new .new_right form select { width: 50%; margin-bottom: 7px; }
+.new .new_right form input[type=text] { width: 100%; font-size: 13px; margin-bottom: 7px; }
+.new .new_right form input[type=text]::placeholder { color: #ddd; font-size: 13px; }
+.new .new_right form button { background: #fff; border: 1px solid #3a0e6a; color: #3a0e6a; padding: 10px; width: 50%; }
+.new .new_right form input[type=submit] { background: #3a0e6a; border: 1px solid #3a0e6a; color: #fff; padding: 10px; width: 50%; }
+
+/* help */
+.help { display: flex; gap: 2%; justify-content: space-between; }
+.help article { width: 32%; }
+.help article>div { border: 1px solid #dbdbdb; }
+.help article h3 { font-size: 30px; font-weight: 500; }
+
+/* 공지사항 */
+.notice {  }
+.notice>ul {  }
+.notice>ul>li { float: left; text-align: center; }
+.notice>ul>li>a { border: 1px solid #dbdbdb; font-size: 15px; color: #666; }
+.notice>ul>li ul {  }
+.notice>ul>li ul li {  }
+.notice>ul>li ul li dl {  }
+.notice>ul>li ul li dl dt {  }
+.notice>ul>li ul li dl dt strong {  }
+.notice>ul>li ul li dl dt em {  }
 
 
 /* 미디어 쿼리 */
@@ -181,6 +219,9 @@
     .opening { padding: 50px 0; }
     .opening .desc { font-size: 25px; background: none; }
     .opening .open_box { display: none; }
+
+    .new .new_left { float: none; width: 100%; }
+    .new .new_right { width: 100%; float: none; }
 }
 
 @media screen and (max-width: 768px) {
@@ -216,8 +257,13 @@
     .opening h2 { font-size: 18px; margin-bottom: 10px; }
     .opening h2 .grand { background-size: 300px; background-position: 0 -105px; width: 197px; height: 24px; }
     .opening .date { display: none; }
-    .opening .desc { font-size: 16px; font-weight: 400;
-        padding-bottom: 0; }
+    .opening .desc { font-size: 16px; font-weight: 400; padding-bottom: 0; }
+
+    #new .row { padding: 0 24px; }
+    .new h2 { font-size: 24px; font-weight: 700; height: 27px; margin-bottom: 20px; padding-bottom: 10px; }
+    .new { background: #fff; margin-top: 24px; padding: 24px; }
+    .new .new_left { height: 400px; }
+    .new .new_right { padding: 24px; }
 }
 
 @media screen and (max-width: 600px) {
@@ -255,7 +301,16 @@
     .event { padding: 16px; }
     .event h2 { font-size: 18px; margin-bottom: 10px; }
 
-
+    #new .row { padding: 0 8px; }
+    .new { padding: 16px; margin-top: 8px; }
+    .new h2 { font-size: 18px; margin-bottom: 10px; }
+    .new .new_left { height: 300px; }
+    .new .new_left .play { width: 80px; height: 80px; }
+    .new .new_right { padding: 17px; }
+    .new .new_right .movie_title { font-size: 22px; }
+    .new .new_right form>div:nth-of-type(1) { flex-direction: column; gap: 0; }
+    .new .new_right form select { width: 100%; }
+    .new .new_right form select { width: 100%; }
 }
 
 @media screen and (max-width: 480px) {
