@@ -1,8 +1,0 @@
-.welcome {
-  text-transform: uppercase;
-}
-
-.welcome::after {
-  content: 'You are not Codingworks';
-  color: red;
-}

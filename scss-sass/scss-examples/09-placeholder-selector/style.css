@@ -1,8 +1,0 @@
-.items .item1, .items .item2, .items .item3 {
-  border: 5px solid #000;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  background-color: tomato;
-}
