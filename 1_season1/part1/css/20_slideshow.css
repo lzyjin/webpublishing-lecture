@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+}
+.tab-inner {
+  position: relative;
+
+  /* border: 1px solid red; */
+  width: 500px;
+  height: 350px;
+  /* 이미지 height + 버튼 height 높이 */
+
+}
+.tab-inner input[name=tabmenu] {
+  display: none;
+}
+
+.content {
+  display: none;
+}
+.content img {
+  width: 500px;
+  height: 300px;
+
+}
+
+.btn {
+  /* position: absolute; 또는 fixed; 이면 이 태그는 inline-block 요소가 된다 */
+  position: absolute;
+  bottom: 10px;
+
+  width: 100%;
+  text-align: center;
+  /* text-align: center; 를 먹히게 하려면 줄어든 width를 100%로 다시 늘려야한다 */
+
+  /* border: 1px solid blue; */
+
+}
+
+.btn label {
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px 0 5px;
+
+}
+
+input[id=tab1]:checked ~ .slide1,
+input[id=tab2]:checked ~ .slide2,
+input[id=tab3]:checked ~ .slide3 {
+  display: block;
+}
+
+
+input[id=tab1]:checked ~ .btn label[for=tab1],
+input[id=tab2]:checked ~ .btn label[for=tab2],
+input[id=tab3]:checked ~ .btn label[for=tab3] {
+  background-color: crimson;
+}

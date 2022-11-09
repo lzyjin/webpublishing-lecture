@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>마우스 올리면 배경이미지 변경하기</title>
+  <link rel="stylesheet" href="/part3/css/06_hover-change-bg.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <ul class="navi">
+      <!-- li는 줄을 바꾸는 역할 -->
+    <li data-image="/part3/images/portrait-01.jpg"><a href="#none" data-text="ABOUT">ABOUT</a></li>
+    <li data-image="/part3/images/portrait-02.jpg"><a href="#none" data-text="INSTRUCTOR">INSTRUCTOR</a></li>
+    <li data-image="/part3/images/portrait-03.jpg"><a href="#none" data-text="CLASS">CLASS</a></li>
+    <li data-image="/part3/images/portrait-04.jpg"><a href="#none" data-text="LOCATION">LOCATION</a></li>
+    </ul>
+    <div class="photo"></div>
+  </div>
+  <script>
+    $( function() {
+
+      $('.navi li').mouseenter( function() {
+        let imageUrl = $(this).attr('data-image');
+        $('.photo').css({
+          "background-image" : `url(${imageUrl})`
+        });
+      } );
+
+      $('.navi li').mouseleave( function() {
+        $('.photo').css({
+          "background-image" : ''
+        });
+      } );
+
+    } );
+  </script>
+</body>
+</html>

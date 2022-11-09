@@ -1,0 +1,33 @@
+.complete {
+  font-size: 15px;
+  width: 120px;
+  padding: 7px;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid royalblue;
+  color: royalblue;
+}
+
+.loading {
+  font-size: 15px;
+  width: 120px;
+  padding: 7px;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid green;
+  color: green;
+}
+
+.error {
+  font-size: 15px;
+  width: 120px;
+  padding: 7px;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid red;
+  color: red;
+}
+
+pre {
+  display: inline-block;
+}

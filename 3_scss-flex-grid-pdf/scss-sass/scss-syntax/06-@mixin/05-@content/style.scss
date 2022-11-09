@@ -1,0 +1,41 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  @content;
+}
+.box {
+  @include border-radius(10px) {
+    border-style: dotted;
+  }
+}
+pre {
+  display: inline-block;
+}
+
+// ------------------
+@mixin sample {
+  @content;
+}
+@include sample {
+  .add {
+    color: crimson;
+  }
+}
+
+// ------------------
+@mixin sample2 {
+  .frame {
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    @content;
+  }
+}
+@include sample2 {
+  .add2 {
+    color: crimson;
+    background-color: yellowgreen;
+    &:hover {
+      color: royalblue;
+    }
+  }
+}

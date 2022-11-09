@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+body {
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+.container h1 {
+  font-family: "Roboto";
+  font-weight: normal;
+  color: #222;
+  font-size: 60px;
+  color: crimson;
+}
+
+.container h2 {
+  font-family: "Roboto";
+  font-weight: normal;
+  color: #222;
+  font-size: 45px;
+}
+
+.container h3 {
+  font-family: "Roboto";
+  font-weight: normal;
+  color: #222;
+  font-size: 30px;
+}
+
+.container p {
+  font-family: "Raleway";
+  font-weight: normal;
+  color: #222;
+  font-size: 15px;
+}

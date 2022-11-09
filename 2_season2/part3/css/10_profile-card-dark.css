@@ -1,0 +1,186 @@
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* 구글폰트 - Roboto  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url(/season2/part3/images/svg-background.svg);
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.frame {}
+.profile {
+  padding: 50px 40px;
+  width: 320px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+
+  /* 라이트모드 다크모드 가로배치해서 보려구  */
+  display: inline-block;
+}
+.face {
+  width: 130px;
+  height: 130px;
+  
+  /* 이 div를 중앙에 위치시키려고  */
+  /* 부모(.profile)에 적용되어있는 text-align: center; 먹게 하려고  */
+  display: inline-block;
+  position: relative;
+}
+.face img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.face i {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  background-color: pink;
+  border-radius: 50%;
+  color: #fff;
+}
+.profile h1 {
+  font-weight: normal;
+  font-size: 26px;
+  margin-bottom: 0;
+}
+.profile h1 span {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #bbb;
+  text-transform: uppercase;
+}
+.profile p {
+}
+.profile p span {
+  display: block;
+  font-size: 13px;
+  color: rgb(254, 161, 177);
+}
+.view-portfolio {
+  background-color: rgb(250, 114, 114);
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.sns {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.sns>div {
+  flex: 1;
+}
+.sns i {
+  font-size: 30px;
+  border-radius: 50%;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.sns>div:nth-child(1) i {
+  background-image: linear-gradient(45deg, #f98c90 0%, #fad0c4 99%, #fad0c4 100%);
+}
+.sns>div:nth-child(2) i {
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+.sns>div:nth-child(3) i {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+}
+.sns span {
+  color: #ccc;
+  font-size: 13px;
+}
+.sns span big {
+  display: block;
+  font-size: 17px;
+  color: #333;
+  font-weight: 500;
+}
+.btn-mode, 
+.like-more {
+  font-size: 18px;
+}
+.btn-mode {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+.btn-mode::before {
+  content: '\eb0f';
+  font-family: xeicon;
+}
+.btn-mode i {
+}
+.like-more {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.like-more span {}
+.btn-like {}
+.btn-like::before {
+  content: '\ea11';
+  font-family: xeicon;
+}
+.btn-more {}
+.btn-more::before {
+  content: '\e949';
+  font-family: xeicon;
+}
+
+/* dark mode  */
+.profile.dark {
+  padding: 50px 40px;
+  width: 320px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  position: relative;
+
+  /* 라이트모드 다크모드 가로배치해서 보려구  */
+  display: inline-block;
+}
+.profile.dark .sns {
+  border-top: 1px solid #555;
+}
+.profile.dark .sns i {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+.profile.dark .sns span big {
+  color: #fff;
+}

@@ -1,0 +1,20 @@
+.frame h2 {
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.frame h2 span {
+  color: royalblue;
+}
+
+.frame h2::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: crimson;
+}

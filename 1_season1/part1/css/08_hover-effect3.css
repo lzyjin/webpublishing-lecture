@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500&display=swap');
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height: 1.5em;
+	font-weight: 300;
+	background-color: #222;
+	color: #fff;
+	margin: 0;
+	font-size: 15px;
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+.items {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	left: 50%;
+}
+
+.item {
+	display: inline-block;
+	/* border: 1px solid #fff; */
+	width: 300px;
+	height: 200px;
+
+	position: relative;
+	cursor: pointer;
+}
+
+.front, .back {
+	position: absolute;
+	width: 100%;
+	/* absolute 때문에 이 div가 inline-block이 되었으므로 width를 100%로 명시해줌 */
+	transition: 0.5s;
+
+	/* top: 0; 이게 없으면 호버되었을때 트랜지션의 시작점을 모르기때문에 트랜지션이 작동하지 않음 */
+	top: 0;
+}
+
+.front {
+	background-color: #333;
+	text-align: center;
+
+	/* inherit 를 쓰면 .item 의 height를 그대로 반영함 */
+	height: inherit;
+	z-index: 1;
+
+	/* .front 와 .back 에서 position: absolute; 를 쓰고 있어서
+	더 뒤에나온.back이 덮어써버려 .front가 보이지 않게 된다 
+	해결방법 : .front의 z-index를 높이거나 .back의 z-index를 낮춘다 */
+}
+
+.front img {
+	
+}
+.front h2 {
+	margin-top: 0;
+	
+}
+.back {
+	background-color: #fff;
+	color: #000;
+	height: inherit;
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+	opacity: 0;
+}
+.back p {}
+.back a {
+	background-color: yellowgreen;
+	color: #fff;
+	padding: 5px 15px;
+	border-radius: 20px;
+	font-size: 13px;
+}
+.back a:hover {
+	background-color: #000;
+}
+
+.item:hover .front {
+	/* .front 에 top이라는 속성이 없으면 트랜지션이 작동하지 않음 */
+	top: -50%;
+}
+.item:hover .back {
+	/* .back 에 top이라는 속성이 없으면 트랜지션이 작동하지 않음 */
+	top: 50%;
+	opacity: 1;
+}
+
+.item:hover .front img {
+	animation: ani 1s linear infinite;
+}
+
+@keyframes ani {
+	0%, 100% {
+		transform: scale(0.9);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}

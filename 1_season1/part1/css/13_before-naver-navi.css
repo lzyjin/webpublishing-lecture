@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500&display=swap');
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height: 1.5em;
+	font-weight: 300;
+	/* background: linear-gradient(1800deg, #dce35b, #45b649); */
+  height: 100vh;
+	background: linear-gradient(90deg, #dce35b, #45b649);
+	color: #fff;
+	margin: 0;
+	font-size: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+.gnb {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 방법 2 (추천) */
+.gnb a {
+  /* border: 1px solid red; */
+  width: 100px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+
+}
+
+.gnb a::before,
+.gnb a::after {
+  position: absolute;
+  content: attr(data-link);
+
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.gnb a::before {
+  top: 0;
+  left: 0;
+}
+.gnb a::after {
+  top: 100%;
+  left: 0;
+  color: #45b649;
+}
+
+.gnb a:hover::before {
+  top: -100%;
+}
+.gnb a:hover::after {
+  top: 0;
+}
+
+/* 방법 1 */
+/*
+.gnb a {
+  width: 100px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+.gnb a span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fonts-weight: 500;
+  fonts-size: 20px;
+
+  transition: 0.3s;
+}
+.gnb a span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.gnb a span:nth-child(2) {
+  top: 100%;
+  left: 0;
+  color: #45b649;
+}
+
+.gnb a:hover span:nth-child(1) {
+  top: -100%;
+}
+.gnb a:hover span:nth-child(2) {
+  top: 0;
+} */

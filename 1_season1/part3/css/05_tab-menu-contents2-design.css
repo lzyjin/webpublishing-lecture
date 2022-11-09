@@ -1,0 +1,116 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eee;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+section {
+  /* border: 1px solid black; */
+  width: 800px;
+}
+.heading {}
+.tab-inner {
+  margin-top: 30px;
+}
+.btn {
+  /* border: 1px solid red; */
+  list-style: none;
+  /* 잃어버린 높이값 찾기  */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.btn li {
+  /* border: 1px solid blue; */
+  /* 가로배치 */
+  float: left;
+
+  width: 100px;
+  text-align: center;
+  background-color: #ddd;
+  cursor: pointer;
+
+  padding: 5px 10px;
+  border-right: 1px solid #ccc;
+  border-radius: 3px 3px 0 0;
+  border-top: 3px solid transparent;
+}
+.btn li:last-child {
+  width: 150px;
+  border-right: none;
+}
+.btn li.active,
+.btn li:hover {
+  background-color: #fff;
+  border-top: 3px solid crimson;
+}
+.tabs {}
+.tabs div {
+  /* border: 1px solid green; */
+  display: none;
+  padding: 30px;
+  background-color: #fff;
+}
+.tabs div.active {
+  display: block;
+}
+/* tab content */
+.tabs div h2 {
+  text-align: center;
+  font-weight: 700;
+}
+.tabs div img {
+  float: left;
+  margin-right: 20px;
+}
+.tabs div p {
+  /* 글이 이미지끝난 부분 아래로 들어가는걸 막음 */
+  overflow: hidden;
+}
+/* heading */
+.heading {}
+.heading h1 {
+  font-size: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.heading h1 span {
+  color: crimson;
+}
+.heading input[type=text] {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  border-bottom: 3px solid #ccc;
+  /* 중요!!! */
+  background: #fff url(/part3/images/search-icon.png) no-repeat center left 10px;
+  background-size: 23px;
+  padding-left: 40px;
+}
+.heading input[type=text]::placeholder {
+  font-style: italic;
+  transition: 0.3s;
+}
+.heading input[type=text]:hover::placeholder,
+.heading input[type=text]:focus::placeholder {
+  /* visibility: hidden; 크기값 유지 */
+  /* display: none; 으로 없앨수 없음 -> 크기값 사라짐 */
+  /* display: none;과 visibility: hidden;은 트랜지션을 줄 수 없다 */
+  opacity: 0;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수의 유효 범위</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>변수의 유효 범위(variable scope)</h1>
+  <p>
+    변수의 유효범위는 <br>
+    전역변수(global variable) - 모든 선택자에서 사용할 수 있는 변수, 선택자 안에서 만들어진 변수는 해당 선택자에서만 사용된다.<br>
+    지역변수(local variable) - 특정 선택자에서만 사용할 수 있는 변수, 선태자 없이 독립적으로 만들어진 변수는 모든 선택자가 사용할 수 있다.<br>
+    로 나뉜다. <br>
+    <b style="color: red; font-weight: normal;">특별한 경우가 아니라면 굳이 지역변수를 사용할 필요는 없다.</b>
+  </p>
+  <p>
+    지역 변수를 전역 변수로 바꾸는 방법은 !global을 변수에 사용하면 된다. <br>
+    $crimson: crimson !global; <br>
+    이런 방법도 있지만 해당 선택자 밖으로 빼면 바로 전역 변수가 된다. 
+  </p>
+  <hr>
+
+  <div class="information">
+    <h1>information</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit unde nesciunt neque laboriosam? Quasi consequuntur impedit ullam iure totam, enim ducimus architecto eius possimus, tempore incidunt laudantium illo labore aspernatur?
+    </p>
+  </div>
+  <div class="reservation">
+    <h1>reservation</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit unde nesciunt neque laboriosam? Quasi consequuntur impedit ullam iure totam, enim ducimus architecto eius possimus, tempore incidunt laudantium illo labore aspernatur?
+    </p>
+  </div>
+</body>
+</html>

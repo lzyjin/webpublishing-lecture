@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>01. css버튼 & 내비게이션 - 3타입 상단 네비게이션</title>
+  <style>
+    /* 구글폰트 - Noto Sans KR  */
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500,700,900&display=swap');
+    * {
+      box-sizing: border-box;
+      color: #222;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      margin: 0;
+      color: #222;
+      line-height: 1.5em;
+      font-size: 15px;
+      background-color: #eee;
+      font-weight: 300;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* Three Type Header Navigation  */
+    .container {}
+    header {
+      font-weight: normal;
+      background-color: #fff;
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+    }
+    nav {
+      width: 1100px;
+      /* 가운데정렬 */
+      margin: auto;
+      /* 잃어버린 높이값 찾기  */
+      overflow: hidden;
+      /* 호버했을때 나오는 서브메뉴가 있다면 overflow: hidden;으로 하면 안됌  */
+      /* height: 70px; */
+    }
+    nav div {
+      height: 70px;
+      /* 수직중앙 */
+      line-height: 70px;
+    }
+    /* float적용하면 그요소는 inline-block */
+    .logo {
+      padding-top: 10px;
+      margin-right: 10px;
+      float: right;
+    }
+    .logo a {}
+    .logo a img {}
+    .gnb {
+      float: left;
+      margin-right: 10px;
+    }
+    .gnb a {
+      margin-right: 10px;
+    }
+    .lnb {
+      float: left;
+    }
+    .lnb a {
+      background-color: dodgerblue;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <!-- nav는 header 안에 한번만 쓰는것이 원칙 -->
+      <nav>
+        <div class="gnb">
+          <a href="#none">강의목록</a>
+          <a href="#none">로드맵</a>
+          <a href="#none">강의신청</a>
+          <a href="#none">퍼블리싱 스토리</a>
+          <a href="#none">커뮤니티</a>
+        </div>
+        <div class="lnb">
+          <a href="#none">로그인</a>
+        </div>
+        <div class="logo">
+          <a href="#none">
+            <img src="/season2/part1/image/logo.png" alt="">
+          </a>
+        </div>
+      </nav>
+    </header>
+  </div>
+</body>
+
+</html>

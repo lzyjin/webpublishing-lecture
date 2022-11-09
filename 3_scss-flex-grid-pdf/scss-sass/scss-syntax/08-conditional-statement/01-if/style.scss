@@ -1,0 +1,19 @@
+.frame div {
+  height: 100px;
+  border: 5px solid #000;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+$width-case1: 500px;
+$width-case2: 250px;
+
+.item1 {
+  width: $width-case1;
+  background-color: if($width-case1 > 600px, crimson, orange);
+}
+.item2 {
+  width: $width-case2;
+  background-color: if($width-case2 < 300px, violet, pink);
+}

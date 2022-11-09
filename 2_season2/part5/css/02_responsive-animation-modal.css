@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500,700,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  outline: none;
+}
+body {
+  font-weight: 300;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  
+  /* 두 요소가 모두 position속성을 가지면 html구조상에서 아래에 있는 요소(.overlay)가 위에 있음(.modal을 덮어씀) */
+  z-index: 10;
+  transition: 0.3s;
+
+  opacity: 0;
+  /* 위에서 아래로 떨어지는 애니메이션 */
+  transform: translate(-50%, -80%);
+  /* 왼쪽에서 오른쪽으로 나오는 애니메이션 */
+  /* transform: translate(-80%, -50%); */
+  /* 조금 커지는 애니메이션 */
+  /* transform: translate(-50%, -50%) scale(0.7); */
+}
+.modal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-content {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  /* display: flex의 기본값은 flex-direction: row; */
+  flex-direction: row;
+}
+.modal-content>div {
+  padding: 20px;
+}
+.photo {
+  flex: 1;
+  /* flex: 1;은 flex-grow:1; flex-shrink: 0;, flex-basis: auto */
+  background: url('/season2/part5/images/office.jpg') no-repeat right center;
+  background-size: cover;
+}
+
+.desc {
+  flex: 2;
+}
+.desc-header {}
+.desc-header h1 {
+  font-size: 23px;
+  font-weight: 400;
+  text-align: center;
+}
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+}
+.btn-close:hover {
+  color: #000;
+}
+.desc-content {}
+.desc-content * {
+  text-align: center;
+}
+.desc-content input[type=email] {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 7px;
+}
+.desc-content input[type=email]::placeholder {
+  transition: 0.3s;
+  color: #bbb;
+  font-weight: 300;
+}
+.desc-content input[type=email]:focus::placeholder {
+  visibility: hidden;
+  opacity: 0;
+}
+.desc-content button {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: crimson;
+  padding: 7px;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.desc-content p {
+  font-size: 14px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: 0.3s;
+
+  /* 모달 여는 버튼을 overlay가 덮어버림 */
+  /* 해결방법 : 마우스이벤트가 없게 해서 더 밑에 있는 애들도 클릭되도록 */
+  /* pointer-events: none; */
+  /* 또는 */
+  visibility: hidden;
+}
+.overlay.active {
+  opacity: 1;
+  /* pointer-events: all; */
+  visibility: visible;
+}
+
+
+@media (max-width: 768px) {
+  
+  .modal-content {
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal-content>div {
+    width: 350px;
+    /* 너비를 350px정도 하면 모바일 화면에서 여백 조금 생기게 딱 맞는 사이즈라서  */
+  }
+  .photo {
+    /* flex로 설정한 요소라서 높이값을 이렇게 설정한다 */
+    flex-basis: 250px;
+  }
+}

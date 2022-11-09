@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.container {
+  font: {
+    family: 'Montserrat', sans-serif;
+    size: 38px;
+    weight: 500;
+  }
+  .portfolio {
+    text: {
+      align: center;
+      overflow: hidden;
+      transform: uppercase;
+      shadow: 2px 2px 20px yellowgreen;
+    }
+  }
+}

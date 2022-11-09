@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>중첩 - 중첩 벗어나기 @at-root</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <b>별3개</b>
+  <h1>중첩 벗어나기 - @at-root</h1>
+  <p>
+    중첩되어있는 자손 요소를 해당 중첩에서 벗어나서 독립적인 선택자(root)로 만드는 키워드 @at-root를 사용한다
+  </p>
+  <pre>
+    .frame {
+      @at-root .heading {
+
+      }
+    }
+    .frame .heading {} 이 아닌 .heading {}으로 컴파일
+  </pre>
+  <hr>
+  <div class="frame">
+    <div class="heading">
+      <h1>hello world</h1>
+    </div>
+  </div>
+</body>
+</html>

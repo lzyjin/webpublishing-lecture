@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Raleway', sans-serif;
+}
+body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6em;
+  color: #222;
+  background: url(/season2/part5/images/background.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* login */
+.login {
+  /* 오버레이에 깔리지 않도록 z-index를 높여주기 위해 position: relative; */
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  width: 400px;
+}
+.login img {
+  width: 100px;
+}
+.login h1 {
+  font-weight: 500;
+}
+.input-field {
+  position: relative;
+}
+.input-field input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin: 20px 0;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 18px;
+}
+.input-field input:focus+span,
+.input-field input:valid+span {
+  top: 0;
+  font-size: 12px;
+  color: #1bbe93;
+  font-weight: 500;
+}
+.input-field span {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.input-field span.warning {
+  color: crimson !important;
+  animation: warning 0.3s ease-in-out 2;
+}
+@keyframes warning {
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+.button-field {}
+.button-field input[type=submit] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  background-color: #1bbe93;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+.add-info {
+  overflow: hidden;
+}
+.add-info label {
+  font-size: 12px;
+  float: left;
+  cursor: pointer;
+  color: #bbb;
+}
+.add-info label em {
+  font-style: normal;
+}
+.add-info label em::before {
+  content: '\e929';
+  font-family: xeicon;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  color: transparent;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+.add-info label input {
+  display: none;
+}
+.add-info label input:checked+em::before {
+  color: #fff;
+  background-color: #1bbe93;
+  border: 1px solid #1bbe93;
+}
+.add-info label input:checked~span {
+  color: #1bbe93;
+}
+.add-info a {
+  font-size: 12px;
+  float: right;
+  color: #bbb;
+}
+.add-info a:hover {
+  text-decoration: underline;
+}

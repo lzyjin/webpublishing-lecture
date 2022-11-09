@@ -1,0 +1,197 @@
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  /* form태그에는 body에 적용한 fonts-family가 적용되지 않으므로 */
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  /* fonts-family: 'Roboto', sans-serif; */
+  margin: 0;
+  background: url(/season2/part3/images/background.png) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 15px;
+  line-height: 1.5em;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+  margin-top: 0;
+}
+input, button {
+  outline: none;
+}
+
+/* login ui  */
+.login {
+  width: 430px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.login h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+.login .field {
+  display: block;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.login input[type=email],
+.login input[type=password] {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding-left: 30px;
+  transition: 0.5s;
+}
+.login input[type=email] {
+  background: url(/season2/part3/images/icon-user.png) no-repeat center left 2px;
+}
+.login input[type=password] {
+  background: url(/season2/part3/images/icon-password.png) no-repeat center left 2px;
+}
+.login input[type=email]::placeholder,
+.login input[type=password]::placeholder {
+  color: #aaa;
+  transition: 0.3s;
+}
+.login input[type=email]:focus::placeholder,
+.login input[type=password]:focus::placeholder {
+  opacity: 0;
+}
+.login input[type=email]:focus,
+.login input[type=password]:focus {
+  border-bottom: 1px solid #444;
+}
+.save-info {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.save-info label {
+  cursor: pointer;
+}
+.save-info input {}
+.save-info a {}
+.event-info {
+  text-align: center;
+}
+.custom-checkbox {}
+.custom-checkbox label {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+.custom-checkbox input {}
+.btn-login {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 30px;
+  background-image: linear-gradient(135deg, #768beb 0%, #905fc1 100%);
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.sns-info {
+  text-align: center;
+  margin: 25px;
+}
+.sns {
+  margin: 10px 0;
+}
+.sns a {
+}
+.sns i {
+  width: 45px;
+  height: 45px;
+  line-height: 47px;
+  border-radius: 50%;
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  margin: 0 3px;
+  /* transition: 0.3s; */
+}
+/* .sns a:hover i {
+  transform: rotateY(360deg);
+} */
+.sns a:nth-child(1) i {
+  background-color: #dd4b39;
+}
+.sns a:nth-child(2) i {
+  background-color: #1877F2;
+}
+.sns a:nth-child(3) i {
+  background-color: #00C300;
+}
+.sns a:nth-child(4) i {
+  background-color: #ffcc00;
+}
+.signup-info {
+  text-align: center;
+}
+.signup-info span {
+  display: block;
+}
+.signup-info a {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.signup-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* custom checkbox  */
+input[id=save-email],
+input[name=event-agree] {
+  display: none;
+}
+/* + : 인접선택자 */
+input[id=save-email]+em {
+  display: inline-block;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  background: url(/season2/part3/images/icon-checkbox.png) no-repeat;
+  background-position: left;
+  vertical-align: middle;
+}
+input[id=save-email]:checked+em {
+  background-position: right;
+}
+input[name=event-agree]+em {
+  display: inline-block;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  background: url(/season2/part3/images/icon-radio.png) no-repeat;
+  background-position: left;
+  vertical-align: middle;
+}
+input[name=event-agree]:checked+em {
+  background-position: right;
+}

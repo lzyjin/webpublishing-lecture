@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* 구글 폰트 - Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* 구글폰트 - Noto Sans KR  */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500,700,900&display=swap");
+body {
+  background-color: #eee;
+  color: #222;
+}
+
+h1 {
+  color: tomato;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+}

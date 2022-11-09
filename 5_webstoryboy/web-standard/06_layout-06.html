@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(✨ 요즘 스타일, 소스 간결) 웹 표준 - 레이아웃 6</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #bbb; display: flex; justify-content: center; align-items: center; }
+        #wrap { width: 100%; }
+        #wrap * { font-size: 25px; color: #fff; text-align: center; }
+
+        #header { height: 140px; line-height: 140px; background: #ffe1e4; }
+        #banner { height: 450px; line-height: 450px; background: #fbd6e3; }
+        #content { height: 950px; line-height: 950px; background: #ead5ee; }
+        #footer { height: 220px; line-height: 220px; background: #d6ebfd; }
+
+        .container { width: 1000px; height: inherit; line-height: inherit; background: #999; margin: 0 auto; background: rgba(0, 0, 0, 0.3); }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">HEADER</div>
+        </div>
+        <div id="banner">
+            <div class="container">BANNER</div>
+        </div>
+        <div id="content">
+            <div class="container">CONTENT</div>
+        </div>
+        <div id="footer">
+            <div class="container">FOOTER</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6em;
+  font-size: 18px;
+}
+
+/* Section : hero  */
+.hero {
+  /* border: 5px solid red; */
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+
+  /* .heading을 중앙정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 백그라운드비디오에 오버레이 씌우기 */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* background: linear-gradient(to right, black, transparent); */
+}
+
+/* ############### Using position ############### */
+.hero video {
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  /* min-width: 100%; */
+  /* min-height: 100%; */
+
+  /* 브라우저창을 줄였을때 비디오가 중앙을 유지하도록하려면 */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  /* 백그라운드 비디오는 항상 가장 밑에 깔리기때문에 z-index를 -1로 준다 */
+  /* z-index: -1; */
+}
+
+/* ############### Using object-fit ############### */
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  /* object-fit을 사용하려면 부모요소에 너비와 높이가 반드시 있어야하고, 
+    자식요소의 너비와 높이가 부모의 것과 같아야한다 */
+  width: 100%;
+  height: 100%;
+  /* 자동으로 중앙을 맞춰준다  */
+  object-fit: cover;
+}
+
+
+.hero .heading {
+  text-align: center;
+  width: 60%;
+  color: #fff;
+}
+.hero .heading h1{
+  font-weight: 500;
+  line-height: 1.6em;
+  font-size: 2em;
+}
+.hero .heading h1 span {
+  display: block;
+  color: crimson;
+}
+
+/* Section : content  */
+.content {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+.content .inner {
+  width: 1280px;
+
+  /* 자식요소들 가로배치 */
+  display: flex;
+  /* gap은 자식요소에 flex:1;을 준것과 동일 */
+  gap: 70px; 
+}
+.content .inner div {}

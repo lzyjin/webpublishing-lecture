@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 - @for</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <b>별3개</b>
+  <h1>반복문 - @for</h1>
+  <p>
+    자바스크립트와 마찬가지로 반복문 for는 변수($변수)를 선언하고 시작(from)해서 종료(through)되기 전까지 반복할 표현식을 계속 반복적으로 출력한다. <br>
+    변수는 일반적으로 $i 로 선언한다.
+  </p>
+  <pre>
+    /* 문법 */
+    @for $변수 from 시작 수 through 종료 수 {
+      // 반복할 표현식 
+    }
+
+    /* 예시 */
+    @for $i from 1 through 10 {
+      .frame div:nth-child(#{$i}) {
+        width: 50px * $i;
+      }
+    }
+  </pre>
+
+  <hr>
+
+  <div class="frame">
+    <div>item1</div>
+    <div>item2</div>
+    <div>item3</div>
+    <div>item4</div>
+    <div>item5</div>
+    <div>item6</div>
+    <div>item7</div>
+    <div>item8</div>
+    <div>item9</div>
+    <div>item10</div>
+  </div>
+</body>
+</html>

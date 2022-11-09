@@ -1,0 +1,27 @@
+/* 왜 768px 이냐? 모바일 가로방향으로 볼때 보통 768px이라서  */
+@media (max-width: 768px) {
+  /* Common Css */
+  section {
+    /* 매우 중요, pc버전에서는 height가 100vh, 모바일에서는 자동으로  */
+    height: auto;
+  }
+  section:not(.welcome) {
+    padding: 40px 20px;
+  }
+  .heading h1 {
+    font-size: 2em;
+    line-height: 1.3em;
+    padding-bottom: 20px;
+  }
+
+  /* GNB  */
+  .gnb {
+    text-align: center;
+    /* border: 1px solid red; */
+    /* position: absolute; 때문에 inline-block이 되어있기 때문에 강제로 width를 넓혀준다 */
+    width: 100%;
+  }
+  .gnb a {
+    font-size: 2.2em;
+  }
+}

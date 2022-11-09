@@ -1,0 +1,32 @@
+@mixin item-box {
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+$width: 300px; // Initial Width
+
+.item {
+  @include item-box;
+  width: $width;
+  @if($width >= 300) {
+    background-color: crimson;
+  }
+  @else if($width < 300) {
+    background-color: royalblue;
+  }
+}
+
+$size: 100px;
+
+.frame {
+  @if($size > 50px and $size <= 150px) {
+    height: 200px;
+  }
+}
+
+pre {
+  display: inline-block;
+}

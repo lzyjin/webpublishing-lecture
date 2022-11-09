@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수에 변수 할당하기</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>변수에 변수 할당하기 (알아만 두기)</h1>
+  <p>
+    변수에 또 다시 변수를 할당할 수 있다.
+    실용성은 잘 모르겠으니 scss 문법 중 하나라고 알아만 두자.
+  </p>
+  <pre>
+    예시)
+    
+    $crimson: crimson;
+    $black: #202020;
+
+    $color-primary:  $crimson;
+    $color-secondary: $black;
+
+    .portfolio {
+      color: $color-secondary;
+      h1 {
+        color: $color-primary;
+      }
+    }
+  </pre>
+  <hr>
+
+  <div class="portfolio">
+    <h1>portfolio</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit unde nesciunt neque laboriosam? Quasi consequuntur impedit ullam iure totam, enim ducimus architecto eius possimus, tempore incidunt laudantium illo labore aspernatur?
+    </p>
+  </div>
+</body>
+</html>

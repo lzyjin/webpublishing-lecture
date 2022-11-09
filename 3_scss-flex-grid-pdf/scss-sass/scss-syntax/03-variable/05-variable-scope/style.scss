@@ -1,0 +1,34 @@
+/* 전역변수 */
+$crimson: crimson;
+$black: #202020;
+
+.information {
+  color: $black;
+  h1 {
+    color: $crimson;
+  }
+}
+.reservation {
+  color: $black;
+  h1 {
+    color: $crimson;
+  }
+}
+
+/* 지역변수 */
+/* .information선택자 안에서 선언한 변수를 이 선택자 중괄호 바깥에서 접근해서 에러 발생 */
+// .information {
+//   $crimson: crimson;
+//   $black: #202020;
+
+//   color: $black;
+//   h1 {
+//     color: $crimson;
+//   }
+// }
+// .reservation {
+//   color: $black;
+//   h1 {
+//     color: $crimson;
+//   }
+// }

@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parallax Effect 04 - 숨김메뉴2 - javascript</title>
+    <!-- 폰트가 가장 위에와야함-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 300;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 400;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 16px;
+            line-height: 1;
+            background: #222;
+            color: #fff;
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 400;
+        }
+
+        header {
+            padding: 20px;
+        }
+        header h1 {
+            display: inline-block;
+            font-size: 20px;
+            border-bottom: 1px solid #fff;
+            margin-bottom: 8px;
+        }
+
+        /* nav */
+        .paraNav {
+            position: fixed;
+            right: 20px; top: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+            transition: top 0.4s ease;
+        }
+        .paraNav.hide {
+            top: -100px;
+        }
+        .paraNav li {
+            display: inline-block;
+            list-style: none;
+        }
+        .paraNav li a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 20px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+        }
+        .paraNav li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* info */
+        .paraScroll {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 12px;
+            padding: 0px 20px;
+        }
+        .paraInfo {
+            position: fixed;
+            left: 20px;
+            bottom: 70px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            padding: 20px;
+            font-size: 12px;
+            line-height: 1.8;
+            border-radius: 10px;
+        }
+        .paraInfo li {
+            list-style: none;
+        }
+
+        #paraCont {
+            overflow: hidden;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .content__item {
+            max-width: 1000px;
+            width: 70vw;
+            margin: 30vw 0;
+            text-align: right;
+            position: relative;
+            padding-top: 15vw;
+        }
+        .content__item:nth-of-type(even) {
+            margin-left: auto;
+            text-align: left;
+        }
+        .content__item__num {
+            font-family: 'Lato';
+            font-size: 25vw;
+            opacity: 0.07;
+            position: absolute;
+            right: -10vw;
+            top: -5vw;
+        }
+        .content__item:nth-of-type(even) .content__item__num {
+            left: -10vw;
+            right: auto;
+        }
+        .content__item__title {
+            padding-bottom: 10px;
+        }
+        .content__item__imgWrap {
+            width: 100%;
+            padding-bottom: 56%;
+            position: relative;
+        }
+        .content__item__img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            filter: saturate(0%);
+            transition: filter 1s;
+        }
+        .content__item:hover .content__item__img {
+            filter: saturate(100%);
+        }
+        .content__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            word-break: keep-all;
+            margin-top: -6vw;
+            margin-right: -3vw;
+            position: relative;
+            z-index: 10;
+        }
+        .content__item:nth-of-type(even) .content__item__desc {
+            margin-left: -3vw;
+        }
+
+        footer {
+            padding: 10vw 0;
+        }
+        footer h2 {
+            padding: 10vw 8vw 0 8vw;
+            font-size: 8vw;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin-bottom: 3vw;
+        }
+        footer h2 em {
+            display: block;
+            font-family: 'Lato';
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+        footer .footerInfo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 2px;
+            background: #000;
+        }
+        footer .footerInfo h3 {
+            margin-right: 10px;
+        }
+        footer .footerInfo ul {
+            list-style: none;
+        }
+        footer .footerInfo ul li {
+            display: inline;
+        }
+        footer .footerInfo ul li:hover a,
+        footer .footerInfo ul li.active a {
+            background: #fff;
+            color: #000;
+        }
+        footer .footerInfo ul li a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="parallax">
+    <div class="paraScroll">scrollTop() : <span>0</span>px</div>
+
+    <header id="paraHeader">
+        <h1>Parallax Effect 04 - javascript</h1>
+        <p>패럴렉스 스크롤링 효과 - 숨김메뉴2</p>
+    </header>
+
+    <nav class="paraNav">
+        <ul>
+            <li class="active"><a href="#section1">메뉴1</a></li>
+            <li><a href="#section2">메뉴2</a></li>
+            <li><a href="#section3">메뉴3</a></li>
+            <li><a href="#section4">메뉴4</a></li>
+            <li><a href="#section5">메뉴5</a></li>
+            <li><a href="#section6">메뉴6</a></li>
+            <li><a href="#section7">메뉴7</a></li>
+            <li><a href="#section8">메뉴8</a></li>
+            <li><a href="#section9">메뉴9</a></li>
+        </ul>
+    </nav>
+
+    <main id="paraCont">
+        <section id="section1" class="content__item">
+            <span class="content__item__num">01</span>
+            <h2 class="content__item__title">Section1</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg1.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질한다.</p>
+        </section>
+        <section id="section2" class="content__item">
+            <span class="content__item__num">02</span>
+            <h2 class="content__item__title">Section2</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg2.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
+        </section>
+        <section id="section3" class="content__item">
+            <span class="content__item__num">03</span>
+            <h2 class="content__item__title">Section3</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg3.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
+        </section>
+        <section id="section4" class="content__item">
+            <span class="content__item__num">04</span>
+            <h2 class="content__item__title">Section4</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg4.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">뭐든지 기본을 중요하게 생각한다.</p>
+        </section>
+        <section id="section5" class="content__item">
+            <span class="content__item__num">05</span>
+            <h2 class="content__item__title">Section5</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg5.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.</p>
+        </section>
+        <section id="section6" class="content__item">
+            <span class="content__item__num">06</span>
+            <h2 class="content__item__title">Section6</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg6.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">천 마디 말보단 하나의 행동이 더 값지다.</p>
+        </section>
+        <section id="section7" class="content__item">
+            <span class="content__item__num">07</span>
+            <h2 class="content__item__title">Section7</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg7.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">조그만 성공에 만족하지 않으며, 방심을 경계한다.</p>
+        </section>
+        <section id="section8" class="content__item">
+            <span class="content__item__num">08</span>
+            <h2 class="content__item__title">Section8</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg8.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.</p>
+        </section>
+        <section id="section9" class="content__item">
+            <span class="content__item__num">09</span>
+            <h2 class="content__item__title">Section9</h2>
+            <figure class="content__item__imgWrap">
+                <div class="content__item__img" style="background: url('images/bg9.jpeg') no-repeat center center / cover"></div>
+            </figure>
+            <p class="content__item__desc">꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.</p>
+        </section>
+    </main>
+
+    <footer id="paraFooter">
+        <h2>Parallax <em>Scrolling</em></h2>
+        <div class="footerInfo">
+            <h3>제이쿼리</h3>
+            <ul>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">6</a>
+                </li>
+                <li>
+                    <a href="#">7</a>
+                </li>
+                <li>
+                    <a href="#">8</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footerInfo">
+            <h3>자바스크립트</h3>
+            <ul>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li class="active">
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">6</a>
+                </li>
+                <li>
+                    <a href="#">7</a>
+                </li>
+                <li>
+                    <a href="#">8</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // 메뉴 클릭 시 해당 섹션으로 이동
+        const menus = document.querySelectorAll('.paraNav ul li');
+        const paraNav = document.querySelector('.paraNav');
+        menus.forEach(v => {
+            v.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const anchor = v.querySelector('a');
+                const href = anchor.getAttribute('href');
+                console.log(href);
+
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth',
+                });
+            });
+        });
+
+        const hasScroll = function () {
+            let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+            // console.log(scrollTop, lastScrollTop);
+
+            if(scrollTop > lastScrollTop) { // 스크롤을 아래로 했을 때 메뉴 숨김
+                paraNav.classList.add('hide');
+                console.log('down / ', '지금스크롤: '+ scrollTop, '라스트스크롤: ' + lastScrollTop);
+            } else {
+                console.log('up / ', '지금스크롤: '+ scrollTop, '라스트스크롤: ' + lastScrollTop);
+                paraNav.classList.remove('hide');
+            }
+
+            lastScrollTop = scrollTop;
+
+            // 출력용
+            const paraScroll = document.querySelector('.paraScroll span');
+            paraScroll.innerText = parseInt(scrollTop);
+
+            // 스크롤 시 해당 위치에 맞는 메뉴 active
+            const sections = document.querySelectorAll('.content__item');
+            sections.forEach((v, i, arr) => {
+                if(scrollTop >= v.offsetTop - 2) {
+                    menus.forEach(menu => {
+                        menu.classList.remove('active');
+                    });
+                    document.querySelector(`.paraNav ul li:nth-of-type(${i+1})`).classList.add('active');
+                }
+            });
+
+        }
+
+        // ❕ 스크롤 방향에 따라 메뉴 노출/미노출
+        let nowScrollTop;
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+
+            nowScrollTop = true;
+
+            // 1초의 시간차를 만들어 lastScrollTop에  1초전의 scrollTop을 대입
+            // 즉, 1초 전의 scrollTop이 현재의 lastScrollTop이 된다.
+            // 그래서 조금이라도 차이가 나게 되어있다.
+            // 그 차이값으로 방금전보다 스크롤을 아래로 했는지 위로 했는지 알 수 있다.
+            // setInterval(function () {
+            setTimeout(function () {
+                if(nowScrollTop) {
+                    nowScrollTop = false;
+                    hasScroll();
+                }
+            }, 1000);
+        });
+
+
+    </script>
+</body>
+</html>

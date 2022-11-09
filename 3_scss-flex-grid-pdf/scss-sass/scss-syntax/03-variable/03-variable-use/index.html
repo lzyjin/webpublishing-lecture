@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수(variable) 사용하기 - 사용 예시</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>변수(variable) 사용하기 - 사용 예시</h1>
+  <p>
+    자주 사용하는 폰트 색상, 배경 색상, 높이와 너비를 변수로 지정하거나 <br>
+    자주 사용되는 이미지 경로를 변수로 지정해서 사용할 수 있다.
+  </p>
+  <pre>
+    예시) 
+    
+    $color-primary: #333;
+    $color-secondary: royalblue;
+    $bgc-portfolio: #eee;
+    $portfolio-item-w: 300px;
+    $portfolio-item-h: 500px;
+    $portfolio-images-url: "images/portfolio/";
+    
+    .portfolio {
+      background-color: $bgc-portfolio;
+      .portfolio-items {
+        width: 1200px;
+        margin: auto;
+        .portfolio-item {
+          display: inline-block;
+          width: $portfolio-item-w;
+          height: $portfolio-item-h;
+          &:nth-child(1) {
+            background-image: url($portfolio-images-url + "bg-01.jpg");
+          }
+          &:nth-child(2) {
+            background-image: url($portfolio-images-url + "bg-02.jpg");
+          }
+          &:nth-child(3) {
+            background-image: url($portfolio-images-url + "bg-03.jpg");
+          }
+        }
+      }
+    }
+  </pre>
+  <hr>
+
+  <div class="portfolio">
+    <h1>portfolio</h1>
+    <div class="portfolio-items">
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+    </div>
+  </div>
+</body>
+</html>

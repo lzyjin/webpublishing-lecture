@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>순서를 만드는 가상클래스 first-child, last-child</title>
+  <style>
+    .tab-inner {
+
+    }
+    .btn {
+
+    }
+    .btn span {
+      background-color: #ddd;
+      width: 120px;
+      display: inline-block;
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px 5px 0 0;
+      cursor: pointer;
+      border: 1px solid black;
+      
+    }
+    .btn span:first-child {
+      background-color: #fff;
+    }
+    .btn span:last-child {
+      margin: -5px;
+    }
+    .tab {
+      border: 1px solid black;
+      width: 400px;
+    }
+    .tab a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin: 5px;
+      padding: 3px;
+      border-bottom: 1px solid #000;
+      overflow: hidden;
+    }
+    .tab a:last-child {
+      border-bottom: none;
+    }
+    .tab a em {
+      font-style: normal;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <h1>순서를 만드는 가상클래스 first-child, last-child</h1>
+
+  <div class="tab-inner">
+    <div class="btn">
+      <span>공지사항</span>
+      <span>갤러리</span>
+    </div>
+    <div class="tab">
+      <a href="#none">SMS 발송 서비스 개선작업 <em>2020.01.09</em></a>
+      <a href="#none">휴대폰 인증 서비스 개선작업 <em>2020.01.07</em></a>
+      <a href="#none">카드사 부분 무이자 할부 이벤트 <em>2019.12.31</em></a>
+      <a href="#none">올앳 시스템 작업 안내 <em>2019.12.20</em></a>
+      <a href="#none">휴대폰 결제 시스템 작업 안내 <em>2019.12.20</em></a>
+    </div>
+  </div>
+  
+</body>
+</html>

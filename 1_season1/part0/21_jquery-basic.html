@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>제이쿼리 기본구문</title>
+  <!-- <link rel="stylesheet" href="css/08_style.css"> -->
+  <style>
+    p {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 여기서부터 html 내용입니다 -->
+  <h1>jquery - 기본 구문 만들기</h1>
+  <pre>
+    $('선택자').함수( function(){
+      $('선택자').메소드();
+     } );
+  </pre>
+
+  <a class="show-btn" href="#none">보이기</a>
+  <a class="hide-btn" href="#none">감추기</a>
+  <p>
+    태그선택자 a를 클릭했습니다.
+  </p>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+
+      $('p').css({
+        'display' : 'none'
+      });
+
+      $('.show-btn').click(function() {
+        $('p').css({
+          'display' : 'block'
+        });
+      });
+
+      $('.hide-btn').click(function() {
+        $('p').css({
+          'display' : 'none'
+        });
+      });
+
+    });
+  </script>
+
+
+
+  <!-- body태그가 끝나는 부분에 작성 -->
+  <!-- jquery cdn의 순서가 먼저 와야만 작동함  -->
+  <!-- <script src="script/jquery-1.12.4.js"></script> -->
+  <!-- <script src="script/custom.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>1. 호버하면 상세설명 나타나는 상품목록</title>
+  <link rel="stylesheet" href="../css/05_hover-effect.css">
+</head>
+<body>
+  <!-- item에 호버하면 caption이 나타나도록 만들것
+  나타나게 하는건 show hide 쓰는게 아니라
+  opacity 0 으로 할것 
+  이유 : 트랜지션을 주려고
+  (display:none)은 트랜지션이 작동안함 -->
+  <div class="items">
+    <div class="item">
+      <img src="./images/product-01.png" alt="">
+      <div class="caption">
+        <h2>Rirakuma doll</h2>
+        <p>
+          The owner of the most popular and cute looks Rilakkuma ~! Rilakkuma giant - It is size sale to small size.
+        </p>
+        <p>Price : <s>$12</s> → $10</p>
+        <a href="">View Details</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="./images/product-02.png" alt="">
+      <div class="caption">
+        <h2>Connie doll</h2>
+        <p>
+          The owner of the most popular and cute looks Rilakkuma ~! Rilakkuma giant - It is size sale to small size.
+        </p>
+        <p>Price : <s>$42</s> → $40</p>
+        <a href="">View Details</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="./images/product-03.png" alt="">
+      <div class="caption">
+        <h2>Cacao Friends figure</h2>
+        <p>
+          The owner of the most popular and cute looks Rilakkuma ~! Rilakkuma giant - It is size sale to small size.
+        </p>
+        <p>Price : <s>$32</s> → $30</p>
+        <a href="">View Details</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

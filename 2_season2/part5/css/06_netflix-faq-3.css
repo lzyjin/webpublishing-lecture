@@ -1,0 +1,72 @@
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6em;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  color: gainsboro;
+}
+a {
+  text-decoration: none;
+}
+
+.faq {}
+.faq .inner {
+  width: 700px;
+}
+.faq .inner h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+.accordion {
+}
+.faq-title {
+  background-color: #303030;
+  padding: 20px 30px;
+  font-size: 26px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  position: relative;
+  transition: 0.3s;
+}
+.faq-title::after {
+  content: '\e9c5';
+  font-family: xeicon;
+  width: 20px;
+  height: 20px;
+  float: right;
+  font-style: normal;
+  transition: 0.3s;
+}
+.faq-title.active {
+  margin-bottom: 1px;
+}
+.faq-title.active::after {
+  transform: rotate(45deg);
+}
+.faq-content {
+  display: none;
+  background-color: #303030;
+  padding: 30px;
+  margin-bottom: 8px;
+}
+.faq-content img {
+  width: 100%;
+  margin-top: 10px;
+}
+.faq-title:hover,
+.faq-title.active {
+  background-color: #34495e;
+}

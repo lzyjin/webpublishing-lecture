@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@mixin에 매개변수, 인수 사용하기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <b>별4개</b>
+  <h1>scss에서 선언된 @mixin에 매개변수, 인수 사용하기</h1>
+  <p>
+    매개변수의 개수, 인수의 개수, css 속성의 값의 개수와 순서를 맞춰야 한다.
+  </p>
+  <pre>
+    * SCSS 사용 방식 *
+
+    @mixin 믹스인이름($매개변수, $매개변수, $매개변수) {
+      css속성 : 인수1 인수2 인수3;
+    }
+    @include 믹스인이름(값1, 값2, 값3);
+  </pre>
+  <hr>
+  <div class="buttons">
+    <button class="approval">승인</button>
+    <button class="refuse">거절</button>
+  </div>
+</body>
+</html>

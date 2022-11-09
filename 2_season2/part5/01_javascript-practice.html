@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>자바스크립트 연습</title>
+  <style>
+    #greeting {
+      font-size: 30px;
+      color: crimson;
+      background-color: #ddd;
+      padding: 10px;
+    }
+    #greeting.active {
+      color: #ddd;
+      background-color: crimson;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div id="greeting">
+      Good to see you!
+    </div>
+    <div class="btns">
+      <button id="btn1" onclick="addClass();">add class</button>
+      <button id="btn2" onclick="removeClass();">remove class</button>
+      <button id="btn3" onclick="toggleClass();">toggle class</button>
+      <!-- <button id="btn4" onclick="changeText();">change text</button> -->
+      <button id="btn4">change text</button>
+    </div>
+  </div>
+  <script>
+    var greetingEl = document.getElementById('greeting');
+
+    function addClass() {
+      greetingEl.classList.add('active');
+    }
+    function removeClass() {
+      greetingEl.classList.remove('active');
+    }
+    function toggleClass() {
+      greetingEl.classList.toggle('active');
+    }
+    // function changeText() {
+    //   greetingEl.innerText = 'hellow everyone';
+    // }
+    var btnChange = document.getElementById('btn4');
+    btnChange.addEventListener('click', function() {
+      greetingEl.innerHTML = 'hellow everyone';
+    });
+  </script>
+</body>
+</html>

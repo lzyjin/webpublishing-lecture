@@ -1,0 +1,59 @@
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+}
+a {
+  text-decoration: none;
+}
+.sns {
+  /* border: 1px solid red; */
+}
+.sns a {
+  color: #fff;
+  margin: 5px;
+  font-size: 1.3em;
+  position: relative;
+}
+.sns a::before {
+  content: attr(data-text);
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border: 1px solid blue; */
+  background-color: #777;
+  color: #000;
+  font-size: 13px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.sns a::after {
+  content: '';
+  position: absolute;
+  background-color: #777;
+  width: 5px;
+  height: 5px;
+  top: -11px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.sns a:hover::before,
+.sns a:hover::after {
+  visibility: visible;
+  opacity: 1;
+}

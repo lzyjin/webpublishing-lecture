@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,300,400,500&display=swap');
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height: 1.5em;
+	font-weight: 300;
+	/* background: linear-gradient(1800deg, #dce35b, #45b649); */
+  height: 100vh;
+	margin: 0;
+	font-size: 15px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+.custom {
+  
+}
+.custom input[type=checkbox] {
+  display: none;
+}
+.custom label[for=chk] {
+  cursor: pointer;
+}
+
+.custom label em {
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+  /* background: url(/part2/images/checkbox-01.png) no-repeat; */
+  /* background: url(/part2/images/checkbox-02.png) no-repeat; */
+  /* background: url(/part2/images/checkbox-03.png) no-repeat; */
+  background: url(/part2/images/checkbox-04.png) no-repeat;
+  /* 기본값 */
+  background-position: left center;
+  
+}
+
+.custom input[type=checkbox]:checked + label em {
+  background-position: right center;
+}
+
+.grade {
+}
+
+.grade input[type=radio] {
+  display: none;
+}
+.grade label {
+  cursor: pointer;
+}
+.grade label em {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: url(/part2/images/radio-01.png) no-repeat;
+  background-position: left center;
+}
+.grade input[type=radio]:checked + label em {
+  background-position: right center;
+}
+.grade input[type=radio]:checked + label {
+  color: rgb(220, 20, 107);
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상크래스 - 마우스 오버 이펙트 가상클래스(hover) & 트랜지션(transition)</title>
+  <style>
+    body {
+      background-color: #fff;
+      color: #333;
+      font-size: 15px;
+    }
+
+    /* 연습1 */
+    a.practice1 {
+      text-decoration: none;
+      color: #333;
+
+      /* transition속성은 hover가 아닌 대상태그에 작성한다 */
+      transition: 0.3s;
+    }
+
+    a.practice1:hover {
+      text-decoration: underline;
+      color: dodgerblue;
+    }
+
+    /* 연습2 */
+    a.practice2 {
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #333;
+      width: 120px;
+      display: inline-block;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+      transition: 0.5s;
+    }
+    a.practice2:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- href속성을 "" 이렇게 비워놓으면 제이쿼리가 작동하지 않으므로 
+  기본으로 #none 으로 작성해놓는다 -->
+  <h1>연습1 - 호버시 밑줄&색상변경 + 트랜지션</h1>
+  <a class="practice1" href="#none">법적고지</a>
+  <a class="practice1" href="#none">개인정보취급방침</a>
+  <a class="practice1" href="#none">개인정보처리방침</a>
+
+  <h1>연습2 - 호버시 배경색상변경 + 트랜지션</h1>
+  <a class="practice2" href="#none">네이버</a>
+  <a class="practice2" href="#none">구글</a>
+  <a class="practice2" href="#none">다음</a>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>포지셔닝 - 원하는 위치로 정확히 보내기</title>
+  <style>
+    .parent {
+      position: relative;
+
+      border: 5px solid red;
+      width: 500px;
+      height: 300px;
+    }
+    .child {
+      position: absolute;
+
+      width: 150px;
+      height: 70px;
+      background-color: gold;
+
+      /* 왼쪽아래외부 */
+      /* left: 0;
+      top: 100%; */
+
+      /* 오른쪽위외부 */
+      /* left: 100%;
+      top: 0; */
+
+      /* 오른쪽아래외부 */
+      left: 100%;
+      top: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>자식요소를 부모요소의 테두리바깥에 정확히 위치시키기</h1>
+  <p>
+    자식요소의 left, right, top, bottom 에 100%라고 쓰면 
+    부모요소의 너비나 높이를 말하는것이므로 
+    부모요소의 테두리에 딱 붙어 부모요소바깥에 위치하게된다
+  </p>
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+</body>
+</html>
