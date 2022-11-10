@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+body {
+  font-family: "Lora", serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sns {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 600px;
+  display: flex;
+}
+.sns li {
+  border: 1px solid #000;
+  padding: 10px;
+  color: #000;
+  flex: 1;
+  text-align: center;
+}
+.sns li a {
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=style.css.map */

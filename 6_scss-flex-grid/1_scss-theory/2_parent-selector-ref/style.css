@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+body {
+  font-family: "Lora", serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 보이는 주석 (css파일에 남는 주석) */
+.btn-outer .btn {
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.4s;
+  position: relative;
+}
+.btn-outer .btn::before, .btn-outer .btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  border: 1px solid #fff;
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.btn-outer .btn:hover {
+  background: transparent;
+}
+.btn-outer .btn:hover::before {
+  opacity: 1;
+  transform: rotate(40deg);
+}
+.btn-outer .btn:hover::after {
+  
+  opacity: 1;
+  transform: rotate(-40deg);
+}
+
+/*# sourceMappingURL=style.css.map */
