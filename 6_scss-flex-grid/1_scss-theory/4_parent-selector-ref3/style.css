@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+body {
+  font-family: "Lora", serif;
+  height: 100vh;
+}
+
+/*
+.frame {
+  margin: 15px;
+
+  .btn {
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+
+    &.confirm {
+      background-color: yellowgreen;
+    }
+    &.warning {
+      background-color: crimson;
+    }
+  }
+}
+*/
+.frame {
+  margin: 15px;
+}
+
+button.btn {
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+button.confirm {
+  background-color: yellowgreen;
+}
+
+button.warning {
+  background-color: crimson;
+}
+
+/*# sourceMappingURL=style.css.map */
