@@ -1,0 +1,57 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+/* 한글주석 테스트 */
+* {
+  font-family: "Lora", serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  background: rgb(243, 243, 243);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin {
+  border: 1px solid #ccc;
+}
+.signin h1 {
+  text-align: center;
+  font-weight: normal;
+  margin-top: 0;
+}
+.signin .sign-inner {
+  background-color: #fff;
+  padding: 20px;
+  width: 350px;
+}
+.signin .sign-inner input[type=button], .signin .sign-inner input[type=email], .signin .sign-inner input[type=password], .signin .sign-inner input[type=submit] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+.signin .sign-inner input[type=button] {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.signin .sign-inner input[type=button]:hover {
+  background-color: #badc58;
+  color: #fff;
+}
+.signin .sign-inner input[type=submit] {
+  background: #27ae60;
+  color: #fff;
+  cursor: pointer;
+}
+.signin .sign-inner input[type=email]:focus {
+  background: #f8edb5;
+}
+
+/*# sourceMappingURL=style.css.map */
