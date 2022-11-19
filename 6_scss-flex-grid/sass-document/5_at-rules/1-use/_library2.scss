@@ -1,0 +1,31 @@
+$-black: #000;
+$-border-radius: 0.25rem;
+$-box-shadow: null;
+
+/// 사용자가 $-box-shadow를 설정했다면 설정된 값이 반환된다.
+/// 그렇지 않으면 $-black에서 파생된 값을 반환합니다.
+@function -box-shadow() {
+  @return $-box-shadow or (0 0.5rem 1rem rgba($-black, 0.15));
+}
+
+@mixin configure($black: null, $border-radius: null, $box-shadow: null) {
+  @if $black {
+    $-black: $black !global;
+  }
+  @if $border-radius {
+    $-border-radius: $border-radius !global;
+  }
+  @if $box-shadow {
+    $-box-shadow: $box-shadow !global;
+  }
+}
+
+@mixin styles {
+  code {
+    border-radius: $-border-radius;
+    box-shadow: -box-shadow();
+  }
+}
+
+
+

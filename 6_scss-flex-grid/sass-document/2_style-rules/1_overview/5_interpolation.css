@@ -1,0 +1,9 @@
+@charset "UTF-8";
+span.emoji-women-holding-hands {
+  font-family: IconFont;
+  font-variant: normal;
+  font-weight: normal;
+  content: "👭";
+}
+
+/*# sourceMappingURL=5_interpolation.css.map */

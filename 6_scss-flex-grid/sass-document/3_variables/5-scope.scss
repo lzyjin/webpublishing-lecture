@@ -1,0 +1,14 @@
+$global-variable: global value;
+
+.content {
+    $local-varable: local value;
+    global: $global-variable;
+    local: $local-varable;
+}
+
+.sidebar {
+    global: $global-variable;
+
+    // This would fail, because $local-variable isn't in scope:
+    //local: $local-variable;
+}

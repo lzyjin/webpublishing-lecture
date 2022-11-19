@@ -1,0 +1,10 @@
+@use "src/corners2";
+
+.button {
+  @include corners2.rounded;
+
+  // 이 구문은 오류입니다.
+  // $-radius는 `_corners.scss` 밖에서 보이지 않습니다.
+  // padding: 5px + corners2.$-radius;
+}
+

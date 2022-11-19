@@ -1,0 +1,9 @@
+.content {
+  value: local value;
+}
+
+.sidebar {
+  value: global value;
+}
+
+/*# sourceMappingURL=6-shadowing.css.map */

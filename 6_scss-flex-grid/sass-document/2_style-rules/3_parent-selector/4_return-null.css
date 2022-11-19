@@ -1,0 +1,11 @@
+.app-background {
+  background-color: #036;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sidebar.app-background {
+  background-color: #c6538c;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/*# sourceMappingURL=4_return-null.css.map */

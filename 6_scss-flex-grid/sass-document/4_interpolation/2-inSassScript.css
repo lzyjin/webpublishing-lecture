@@ -1,0 +1,15 @@
+.pulse {
+  animation-name: inline-uoa3zir;
+  animation-direction: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes inline-uoa3zir {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+/*# sourceMappingURL=2-inSassScript.css.map */

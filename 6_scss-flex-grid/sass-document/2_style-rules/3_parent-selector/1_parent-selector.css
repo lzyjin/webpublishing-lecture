@@ -1,0 +1,12 @@
+.alert:hover {
+  font-weight: bold;
+}
+[dir=rtl] .alert {
+  margin-left: 0;
+  margin-right: 10px;
+}
+:not(.alert) {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=1_parent-selector.css.map */

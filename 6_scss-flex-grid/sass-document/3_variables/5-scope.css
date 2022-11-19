@@ -1,0 +1,10 @@
+.content {
+  global: global value;
+  local: local value;
+}
+
+.sidebar {
+  global: global value;
+}
+
+/*# sourceMappingURL=5-scope.css.map */

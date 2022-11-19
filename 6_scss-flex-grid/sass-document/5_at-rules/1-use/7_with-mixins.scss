@@ -1,0 +1,8 @@
+@use 'library2';
+
+@include library2.configure(
+  $black: #222,
+  $border-radius: 0.1rem
+);
+
+@include library2.styles;
