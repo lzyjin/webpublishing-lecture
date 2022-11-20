@@ -1,0 +1,5 @@
+@use "bootstrap2";
+
+li {
+  @include bootstrap2.list-reset;
+}
