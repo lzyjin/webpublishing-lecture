@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;800;900&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+/* @mixin and @include */
+.heading {
+  text-align: center;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 20px;
+}
+.heading span {
+  color: hotpink;
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: pink;
+  border-radius: 5px;
+}
+
+.news-headline {
+  text-align: center;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 20px;
+}
+.news-headline span {
+  color: royalblue;
+}
+.news-headline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: skyblue;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

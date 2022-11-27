@@ -1,0 +1,32 @@
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+
+body {
+  font-family: 'Lora', serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Operators */
+$font-size: 15px;
+$box-margin: 50px;
+
+.frame {
+  border: 1px solid #000;
+  padding: 10px + 10px;
+  // margin: ($box-margin / 2);  // deprecated
+  margin: math.div($box-margin, 2);
+
+  h1 {
+    font-size: $font-size * 1.5;
+    // font-size: calc($font-size * 1.5); // 안됌
+    // font-size: calc(50px * 1.5); // 됌
+  }
+
+  p {
+    border: 1px solid #000;
+    // margin: ($box-margin / 3); // deprecated
+    margin: math.div($box-margin, 3);
+  }
+}

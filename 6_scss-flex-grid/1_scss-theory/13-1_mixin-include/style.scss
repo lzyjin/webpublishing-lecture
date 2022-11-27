@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;800;900&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+
+/* @mixin and @include */
+//@mixin headline {
+@mixin headline($accent-color, $bar-color) {
+  text-align: center;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 20px;
+
+  span {
+    //color: hotpink;
+    color: $accent-color;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    //background-color: pink;
+    background-color: $bar-color;
+    border-radius: 5px;
+  }
+}
+
+.heading {
+  //@include headline;
+  @include headline(hotpink, pink);
+}
+
+.news-headline {
+  @include headline(royalblue, skyblue);
+}
