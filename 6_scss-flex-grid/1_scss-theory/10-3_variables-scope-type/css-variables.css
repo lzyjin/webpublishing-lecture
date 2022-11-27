@@ -1,0 +1,21 @@
+/*
+    :root
+    문서의 루트 요소 선택
+    HTML에서는 <html>
+*/
+
+/*
+:root {
+    --변수명: 값;
+}
+*/
+
+:root {
+    --primary-color: #222;
+    --secondary-color: #444;
+}
+
+p {
+    color: var(--primary-color);
+    background: var(--secondary-color);
+}

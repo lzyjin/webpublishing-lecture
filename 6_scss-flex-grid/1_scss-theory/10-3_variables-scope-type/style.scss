@@ -1,0 +1,22 @@
+// 전역변수
+$crimson: crimson;
+$black: #000;
+
+.portfolio {
+  color: $crimson;
+
+  // 지역변수
+  $blue: royalblue;
+
+  h1 {
+    color: $black;
+  }
+}
+
+.headline {
+  // color: $blue; // Undefined variable.
+
+  h2 {
+    color: $black;
+  }
+}

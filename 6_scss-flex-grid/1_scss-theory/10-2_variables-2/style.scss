@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;800;900&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+// Variables
+$color-primary: #222;
+$color-secondary: #333;
+$bgc-item: #eee;
+$portfolio-item-w: 300px;
+$portfolio-item-h: 300px;
+$portfolio-images-url: 'images/';
+$portfolio-item-border-radius: 10px;
+
+/* Portfolio */
+.portfolio {
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .portfolio-items {
+    width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    .portfolio-item {
+      border: 1px solid #000;
+      width: $portfolio-item-w;
+      height: $portfolio-item-h;
+      border-radius: $portfolio-item-border-radius;
+      background-image: url('images/blog-post-01.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &:nth-child(1) {
+        background-image: url($portfolio-images-url + 'blog-post-01.jpg');
+      }
+      &:nth-child(2) {
+        background-image: url('#{$portfolio-images-url}blog-post-02.jpg');
+      }
+      &:nth-child(3) {
+        background-image: url('#{$portfolio-images-url}blog-post-03.jpg');
+      }
+      &:nth-child(4) {
+        background-image: url('#{$portfolio-images-url}blog-post-04.jpg');
+      }
+      &:nth-child(5) {
+        background-image: url('#{$portfolio-images-url}blog-post-05.jpg');
+      }
+      &:nth-child(6) {
+        background-image: url('#{$portfolio-images-url}blog-post-06.jpg');
+      }
+      &:nth-child(7) {
+        background-image: url('#{$portfolio-images-url}blog-post-07.jpg');
+      }
+      &:nth-child(8) {
+        background-image: url('#{$portfolio-images-url}blog-post-08.jpg');
+      }
+    }
+  }
+}
