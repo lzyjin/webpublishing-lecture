@@ -1,0 +1,33 @@
+@use 'variable';
+@use 'mixin';
+
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: 'NanumSquareNeo-Variable', sans-serif;
+  display: inline-block;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+
+  @include mixin.button-padding(20px, 50px);
+  &.approval {
+    @include mixin.border-style(2px, solid, blue);
+  }
+  &.refuse {
+    @include mixin.border-style(2px, dashed, #555);
+  }
+}

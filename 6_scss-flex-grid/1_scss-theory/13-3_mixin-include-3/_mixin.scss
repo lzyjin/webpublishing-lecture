@@ -1,0 +1,25 @@
+@use 'variable';
+
+@mixin button($color) {
+  font-family: 'S-CoreDream-3Light', sans-serif;
+  font-size: 20px;
+  background: #fff;
+  font-weight: 600;
+  width: 120px;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.35s;
+  border: 2px solid $color;
+  color: $color;
+
+  &:hover {
+    //background: $color;
+    //color: #fff;
+
+    background: variable.$color-hover;
+    color: #fff;
+    border-color: variable.$color-hover;
+  }
+}

@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.complete {
+  font-family: "S-CoreDream-3Light", sans-serif;
+  font-size: 20px;
+  background: #fff;
+  font-weight: 600;
+  width: 120px;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.35s;
+  border: 2px solid #2c9eef;
+  color: #2c9eef;
+}
+button.complete:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+button.loading {
+  font-family: "S-CoreDream-3Light", sans-serif;
+  font-size: 20px;
+  background: #fff;
+  font-weight: 600;
+  width: 120px;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.35s;
+  border: 2px solid #3fbd23;
+  color: #3fbd23;
+}
+button.loading:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+button.error {
+  font-family: "S-CoreDream-3Light", sans-serif;
+  font-size: 20px;
+  background: #fff;
+  font-weight: 600;
+  width: 120px;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.35s;
+  border: 2px solid #f61c34;
+  color: #f61c34;
+}
+button.error:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: "NanumSquareNeo-Variable", sans-serif;
+  display: inline-block;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 20px 50px;
+}
+button.approval {
+  border: 2px solid blue;
+}
+button.refuse {
+  border: 2px dashed #555;
+}
+
+/*# sourceMappingURL=style.css.map */

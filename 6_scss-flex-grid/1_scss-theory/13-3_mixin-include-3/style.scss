@@ -1,0 +1,33 @@
+@use 'variable';
+@use 'mixin';
+
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+button {
+  &.complete {
+    //@include mixin.button(#2c9eef);
+    @include mixin.button(variable.$color-complete);
+  }
+  &.loading {
+    //@include mixin.button(#3fbd23);
+    @include mixin.button(variable.$color-loading);
+  }
+  &.error {
+    //@include mixin.button(#f61c34);
+    @include mixin.button(variable.$color-error);
+  }
+}
+
