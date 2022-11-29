@@ -1,0 +1,35 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@font-face {
+  font-family: "MaplestoryOTFBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #2d3436;
+  font-family: "MaplestoryOTFBold";
+}
+
+.frame h1 {
+  color: #fd79a8;
+  font-size: 45px;
+}
+.frame h2 {
+  color: #55efc4;
+  font-size: 32px;
+}
+.frame h3 {
+  color: #55efc4;
+  font-size: 20px;
+}
+.frame p {
+  color: #ffeaa7;
+}
+.frame p.ko {
+  font-family: "Galmuri14";
+}
+.frame p.en {
+  font-family: "MaplestoryOTFBold";
+}
+
+/*# sourceMappingURL=style.css.map */

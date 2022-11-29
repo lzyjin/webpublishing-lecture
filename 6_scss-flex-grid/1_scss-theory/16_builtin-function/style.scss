@@ -1,0 +1,62 @@
+// 영문폰트
+@font-face {
+  font-family: 'MaplestoryOTFBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+// 한글폰트
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+
+//$color: (
+//  키: 값,
+//  키: 값,
+//);
+
+$color: (
+  font-primary: #ffeaa7,
+  font-secondary: #55efc4,
+  font-focus: #fd79a8,
+  bgc-primary: #2d3436,
+  bgc-secondary: #b2bec3,
+);
+$headline-font: (
+  headline-font-large: 45px,
+  headline-font-medium: 32px,
+  headline-font-small: 20px,
+);
+$font-family: (
+  ko: 'Galmuri14',
+  en: 'MaplestoryOTFBold'
+);
+
+body {
+  background-color: map-get($color, bgc-primary);
+  font-family: map-get($font-family, en);
+}
+
+.frame {
+  h1 {
+    color: map-get($color, font-focus);
+    font-size: map-get($headline-font, headline-font-large);
+  }
+  h2 {
+    color: map-get($color, font-secondary);
+    font-size: map-get($headline-font, headline-font-medium);
+  }
+  h3 {
+    color: map-get($color, font-secondary);
+    font-size: map-get($headline-font, headline-font-small);
+  }
+  p {
+    color: map-get($color, font-primary);
+
+    &.ko {
+      font-family: map-get($font-family, ko);
+    }
+    &.en {
+      font-family: map-get($font-family, en);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Cafe24Ssurround', serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+%shape {
+  border: 1px solid #000;
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card {
+  display: flex;
+  gap: 30px;
+
+  &-item {
+    @extend  %shape;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
