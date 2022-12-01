@@ -1,0 +1,9 @@
+.theme-sample ul li {
+  padding-left: 16px;
+}
+[dir=rtl] .theme-sample ul li {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+/*# sourceMappingURL=4_parent-selector-refer.css.map */
