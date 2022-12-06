@@ -1,0 +1,8 @@
+// 모듈 시스템 사용자는 '@include reset.list()'로 작성한다.
+@mixin list() {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

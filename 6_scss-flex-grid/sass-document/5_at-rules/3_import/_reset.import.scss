@@ -1,0 +1,2 @@
+// 레거시 @import 사용자도 '@include reset-list()'를 작성할 수 있다.
+@forward "reset" as reset-*;
