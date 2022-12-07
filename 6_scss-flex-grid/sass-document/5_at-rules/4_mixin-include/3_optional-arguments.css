@@ -1,0 +1,10 @@
+.mail-icon {
+  text-indent: -99999em;
+  overflow: hidden;
+  text-align: left;
+  background-image: url("/images/mail.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+/*# sourceMappingURL=3_optional-arguments.css.map */

@@ -1,0 +1,8 @@
+.sidebar {
+  float: left;
+}
+[dir=rtl] .sidebar {
+  float: right;
+}
+
+/*# sourceMappingURL=2_arguments.css.map */
