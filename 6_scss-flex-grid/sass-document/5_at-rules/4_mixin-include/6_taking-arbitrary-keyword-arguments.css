@@ -1,0 +1,13 @@
+pre span.stx-string {
+  color: #080;
+}
+
+pre span.stx-comment {
+  color: #800;
+}
+
+pre span.stx-variable {
+  color: #60b;
+}
+
+/*# sourceMappingURL=6_taking-arbitrary-keyword-arguments.css.map */

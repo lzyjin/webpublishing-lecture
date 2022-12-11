@@ -1,0 +1,6 @@
+$primary-color: #036;
+
+.banner {
+  background-color: $primary-color;
+  color: scale-color($primary-color, $lightness: +40%);
+}

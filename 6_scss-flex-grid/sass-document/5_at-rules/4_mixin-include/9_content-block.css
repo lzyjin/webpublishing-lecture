@@ -1,0 +1,8 @@
+.button {
+  border: 1px solid black;
+}
+.button:not([disabled]):hover {
+  border-width: 2px;
+}
+
+/*# sourceMappingURL=9_content-block.css.map */

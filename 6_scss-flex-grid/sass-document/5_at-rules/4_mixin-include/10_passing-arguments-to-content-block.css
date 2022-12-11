@@ -1,0 +1,13 @@
+@media screen {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media print {
+  h1 {
+    font-size: 40px;
+    font-family: Calluna, serif;
+  }
+}
+
+/*# sourceMappingURL=10_passing-arguments-to-content-block.css.map */
