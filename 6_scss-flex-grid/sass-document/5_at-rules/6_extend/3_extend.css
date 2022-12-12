@@ -1,0 +1,9 @@
+.error:hover, .error--serious:hover {
+  background-color: #fee;
+}
+
+.error--serious {
+  border-width: 3px;
+}
+
+/*# sourceMappingURL=3_extend.css.map */
