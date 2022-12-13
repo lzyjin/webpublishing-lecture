@@ -1,0 +1,14 @@
+p.info {
+  background-color: #dee9fc;
+}
+
+.guide .info, .guide .content nav.sidebar, .content .guide nav.sidebar {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+
+main.content .info, main.content nav.sidebar {
+  font-size: 0.8em;
+}
+
+/*# sourceMappingURL=4_how-it-works.css.map */

@@ -1,0 +1,9 @@
+.alert:hover, .test {
+  font-weight: bold;
+}
+
+.test:hover {
+  color: red;
+}
+
+/*# sourceMappingURL=5_placeholder-selectors.css.map */
