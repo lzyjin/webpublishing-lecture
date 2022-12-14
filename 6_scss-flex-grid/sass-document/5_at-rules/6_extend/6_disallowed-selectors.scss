@@ -1,0 +1,9 @@
+.alert {
+    @extend .message.info;
+    // Error: compound selectors may no longer be extended.
+    // * Consider `@extend .message, .info` instead.
+    // * See https://sass-lang.com/d/extend-compound for details.
+
+    @extend .main .info;
+    // Error: complex selectors may not be extended.
+}

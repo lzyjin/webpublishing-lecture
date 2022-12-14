@@ -1,0 +1,20 @@
+/* Error: compound selectors may no longer be extended.
+ * Consider `@extend .message, .info` instead.
+ * See https://sass-lang.com/d/extend-compound for details.
+ * 
+ *   ,
+ * 2 |     @extend .message.info;
+ *   |             ^^^^^^^^^^^^^
+ *   '
+ *   6_disallowed-selectors.scss 2:13  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: compound selectors may no longer be extended.\a Consider `@extend .message, .info` instead.\aSee https://sass-lang.com/d/extend-compound for details.\a\a   \2577 \a 2 \2502      @extend .message.info;\a   \2502              ^^^^^^^^^^^^^\a   \2575 \a   6_disallowed-selectors.scss 2:13  root stylesheet";
+}
