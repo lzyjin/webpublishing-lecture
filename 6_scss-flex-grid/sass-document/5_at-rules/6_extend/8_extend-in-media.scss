@@ -1,0 +1,10 @@
+.error {
+    border: 1px #000;
+    background-color: #f00;
+}
+
+@media screen and (max-width: 600px) {
+    .error--serious {
+        @extend .error;
+    }
+}

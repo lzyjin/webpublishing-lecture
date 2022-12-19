@@ -1,0 +1,17 @@
+/* Error: "Property top must be either left or right."
+ *    ,
+ * 18 |     @include reflexive-position(top, 12px);
+ *    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   1_error.scss 18:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: "Property top must be either left or right."\a    \2577 \a 18 \2502      @include reflexive-position(top, 12px);\a    \2502      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   1_error.scss 18:5  root stylesheet';
+}
