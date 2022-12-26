@@ -1,0 +1,13 @@
+@media print {
+  .page {
+    width: 8in;
+  }
+}
+.page {
+  color: #111;
+}
+.page {
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=2_beyond-style-rules.css.map */
