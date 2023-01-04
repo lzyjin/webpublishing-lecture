@@ -1,0 +1,22 @@
+.icon-name:before {
+  content: "\f112";
+  display: inline-block;
+  font-family: "Icon Font";
+  font-size: 12px;
+}
+
+.icon-name:before {
+  content: "\f12e";
+  display: inline-block;
+  font-family: "Icon Font";
+  font-size: 16px;
+}
+
+.icon-name:before {
+  content: "\f12f";
+  display: inline-block;
+  font-family: "Icon Font";
+  font-size: 10px;
+}
+
+/*# sourceMappingURL=3_destructuring.css.map */
